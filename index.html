@@ -246,6 +246,43 @@
 			}</code>
 			<p>Da notare che tutti i costrutti “for” ci consentono di dichiarare delle variabili da utilizzare all’interno del ciclo stesso, come let key in questo esempio.</p>
 			<p>Inoltre possiamo utilizzare qualsiasi altra variabile al posto di key. Ad esempio "for(let prop in obj)" è molto utilizzato.</p>
+			<h2 id="8">Riepilogo</h2>
+			<p>Gli oggetti sono arrays associativi con diverse caratteristiche speciali:</p>
+			<p>Possono memorizzare proprietà (coppie di chiave-valore) in cui:</p>
+			<p>
+				<ul>
+					<li>Il nome della proprietà (chiave) deve essere composta da una o più stringhe o simboli (solitamente stringhe).</li>
+					<li>I valori possono essere di qualsiasi tipo.</li>
+				</ul>
+			</p>
+			<p>Per accedere ad una proprietà possiamo utilizzare:</p>
+			<p>
+				<ul>
+					<li>La notazione puntata: obj.property.</li>
+					<li>La notazione con parentesi quadre obj["property"]. Questa notazione consente di accettare chiavi dalle variabili, come obj[varWithKey].</li>
+				</ul>
+			</p>
+			<p>Operatori specifici:</p>
+			<p>
+				<ul>
+					<li>Per cancellare una proprietà: delete obj.prop.</li>
+					<li>Per controllare se un una proprietà con un certo nome esiste: "key" in obj.</li>
+					<li>Per iterare un oggetto: for(let key in obj).</li>
+				</ul>
+			</p>
+			<p>Gli oggetti vengono assegnati e copiati per riferimento. In altre parole, la variabile non memorizza il “valore dell’oggetto”, ma piuttosto un “riferimento” (indirizzo di memoria). Quindi copiando questa variabile o passandola come argomento ad una funzione, fornirà un riferimento all’oggetto e non una copia. Tutte le operazioni effettuate su un oggetto copiato per riferimento (come aggiungere/rimuovere proprietà) vengono effettuate sullo stesso oggetto.</p>
+			<p>Quello che abbiamo studiato in questo capitolo viene chiamato “oggetto semplice”, o solo Object.</p>
+			<p>Ci sono altri tipi di oggetti in Javascript:</p>
+			<p>
+				<ul>
+					<li>Array per memorizzare dati ordinati,</li>
+					<li>Date per memorizzare informazioni riguardo date e orari,</li>
+					<li>Error per memorizzare informazioni riguardo errori.</li>
+					<li>…e molti altri.</li>
+				</ul>
+			</p>
+			<p>Ognuno di questi ha le sue caratteristiche speciali che studieremo più avanti. Qualche volta le persone dicono cose tipo “Array type” (“tipo Array”) o “Date type” (“tipo Data”), ma formalmente non sono dei tipi, appartengono al tipo di dato “object”. Sono semplicemente delle estensioni.</p>
+			<p>Gli oggetti in JavaScript sono molto potenti. Qui abbiamo grattato solamente la superficie, l’argomento è veramente ampio. Lavoreremo molto con gli oggetti per impararne ulteriori caratteristiche.</p>
 		</div>
 	</div>
 </body>
