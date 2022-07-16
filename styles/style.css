@@ -48,7 +48,7 @@
 	border-radius: 20px;
 	align-self: center;
 }
-.topbar-search button {
+.topbar-button{
 	background-color: transparent;
 	color: white;
 	font-size: 35px;
@@ -56,9 +56,22 @@
 	cursor: pointer;
 	margin-left: 10px;
 }
-.topbar-search button:hover {
+.topbar-button:hover {
 	color: var(--my-red);
 	transition: color .3s;
+}
+.topbar-mobile {
+	display: none;
+	margin-right: 20px;
+}
+.search-mobile {
+	width: 100%;
+	height: 30px;
+	font-size: 16px;
+	margin-bottom: 5px;
+	border: none;
+	border-radius: 20px;
+	padding-left: 15px;
 }
 .sidebar-container, .rect {
 	height: 100%;
@@ -174,7 +187,7 @@
 .main h2, .main h3 {
 	font-size: 32px;
 	font-weight: 700;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	margin-top: 20px;
 	color: var(--my-blue);
 }
@@ -190,7 +203,7 @@
 	padding: 10px 25px;
 	margin: 20px 0px;
 }
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 1025px) {
 	html {
 		overflow-x: hidden;
 	}
@@ -209,7 +222,15 @@
 	.topbar-search {
 		display: none;
 	}
+	.topbar-mobile {
+		display: flex;
+		align-items: center;
+	}
+	.search-mobile {
+		display: none;
+	}
 	.topbar-nav a {
+		display: inline;
 		font-size: 23px;
 		width: 200px;
 		top: 15px;
@@ -222,3 +243,4 @@
 		display: inline;
 	}
 }
+

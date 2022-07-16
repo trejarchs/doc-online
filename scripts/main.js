@@ -46,8 +46,35 @@ function closeSidebar() {
     document.getElementById("main").style.left = "200px"; 
 };
 
+/* Funzione per aprire la searchbar */
+function openSearchbar(){
+    let width = window.innerWidth;
+    if (width < 600)
+        document.getElementById("topbar-title").style.display = "none";
+    document.getElementById("search-mobile").style.display = "inline";
+    document.getElementById("menu-img").className = "bx bx-search-alt-2";
+};
 
-function search(){
+function closeSearchbar(){
+    document.getElementById("topbar-title").style.display = "inline";
+    document.getElementById("search-mobile").style.display = "none";
+    document.getElementById("menu-img").className = "bx bx-menu";
+    let input = document.getElementById("search-mobile").value;
+    search(input);
+};
+
+function isSearchbarOpen(){
+    if ( document.getElementById("search-mobile").style.display == "inline")
+        return true;
+    else
+        return false;
+};
+
+function toggleSearchbar(){
+    isSearchbarOpen() ? closeSearchbar() : openSearchbar();
+};
+
+function search(string){
     //TODO
 };
 

@@ -19,16 +19,20 @@
 		<div class="topbar-container">
 			<div class="topbar-logo">
 				<a href="index.html">
-					<img alt="logo" height="70px" id="logo" src="images/unipg-logo.png" width="auto"> 
-					<img alt="logo" height="70px" id="logo-mobile" src="images/unipg-logo-mobile.png" width="auto">
+					<img id="logo" alt="logo" height="70px" src="images/unipg-logo.png" width="auto"> 
+					<img id="logo-mobile" alt="logo" height="70px" src="images/unipg-logo-mobile.png" width="auto">
 				</a>
 			</div>
 			<div class="topbar-nav">
-				<a href="index.html">Documentazione On-Line</a>
+				<a id="topbar-title" href="index.html">Documentazione On-Line</a>
 			</div>
 			<div class="topbar-search">
 				<input name="search" placeholder="Cerca..." type="text"> 
-				<button type="submit"><i class="bx bx-search-alt-2"></i></button>
+				<button id="search-button" class="topbar-button" type="submit" onclick="search(value)"><i class="bx bx-search-alt-2"></i></button>
+			</div>
+			<div class="topbar-mobile">
+				<input id="search-mobile" class="search-mobile" name="search" placeholder="Cerca..." type="text">
+				<button id="menu-button" class="topbar-button" onclick="toggleSearchbar()"><i id="menu-img" class='bx bx-menu'></i></button> 
 			</div>
 		</div>
 	</div>
@@ -36,8 +40,8 @@
     <!--Sidebar-->
 	<div class="sidebar">
 		<!--Rettangolo che uso per estendere la Sidebar-->
-		<div class="rect" id="side-rect"></div>
-		<div class="sidebar-container" id="sidebar">
+		<div id="side-rect" class="rect"></div>
+		<div id="sidebar" class="sidebar-container">
 			<div class="sidebar-title">
 				<h3>Capitolo</h3>
 				<a href="#1">Oggetti: le basi</a>
@@ -56,22 +60,22 @@
 	</div>
 
     <!--Sidebar button per aprire/chiudere la sidebar-->
-	<button class="button" id="side-button" onclick="toggleSidebar()">
+	<button id="side-button" class="button" onclick="toggleSidebar()">
 		<i class='bx bx-menu'></i>
 	</button> 
 
 	<!--Buttons per andare alla lezione successiva/precedente-->
-	<button class="nav-button button" id="prev-button" onclick="prevLesson()">
+	<button id="prev-button" class="nav-button button" onclick="prevLesson()">
 		<i class='bx bx-chevron-left'></i> 
 		<span class="tooltip">Lezione precedente</span>
 	</button> 
-	<button class="nav-button button" id="next-button" onclick="nextLesson()">
+	<button id="next-button" class="nav-button button" onclick="nextLesson()">
 		<i class='bx bx-chevron-right'></i> 
 		<span class="tooltip">Lezione successiva</span>
 	</button> 
 
 	<!--Testo del documento-->
-	<div class="main" id="main">
+	<div id="main" class="main">
 
 		<!--Pathnav-->
 		<div class="pathnav">
