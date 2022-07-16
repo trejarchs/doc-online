@@ -6,45 +6,73 @@
 	<meta content="ie=edge" http-equiv="X-UA-Compatible">
 	<title>Template | Omar Criacci</title>
 	<link href="styles/style.css" rel="stylesheet">
-	<script src="scripts/main.js" type="text/javascript">
-	</script>
+	<script src="scripts/main.js" type="text/javascript"></script>
 	<link href="https://fonts.googleapis.com" rel="preconnect">
 	<link href="https://fonts.gstatic.com" rel="preconnect">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body ondragstart="return false;">
+
 	<!--Topbar-->
 	<div class="topbar">
 		<div class="topbar-container">
 			<div class="topbar-logo">
-				<a href="index.html"><img alt="logo" height="70px" id="logo" src="images/unipg-logo.png" width="auto"> <img alt="logo" height="70px" id="logo-mobile" src="images/unipg-logo-mobile.png" width="auto"></a>
+				<a href="index.html">
+					<img alt="logo" height="70px" id="logo" src="images/unipg-logo.png" width="auto"> 
+					<img alt="logo" height="70px" id="logo-mobile" src="images/unipg-logo-mobile.png" width="auto">
+				</a>
 			</div>
 			<div class="topbar-nav">
 				<a href="index.html">Documentazione On-Line</a>
 			</div>
 			<div class="topbar-search">
-				<input name="search" placeholder="Cerca..." type="text"> <button type="submit"><i class="bx bx-search-alt-2"></i></button>
+				<input name="search" placeholder="Cerca..." type="text"> 
+				<button type="submit"><i class="bx bx-search-alt-2"></i></button>
 			</div>
 		</div>
 	</div>
+
     <!--Sidebar-->
 	<div class="sidebar">
 		<!--Rettangolo che uso per estendere la Sidebar-->
 		<div class="rect" id="side-rect"></div>
 		<div class="sidebar-container" id="sidebar">
 			<div class="sidebar-title">
-				<h3>Capitolo</h3><a href="#1">Oggetti: le basi</a>
+				<h3>Capitolo</h3>
+				<a href="#1">Oggetti: le basi</a>
 			</div>
 			<div class="sidebar-nav">
-				<h3>Naviga tra le lezioni</h3><a href="#2">Le proprietà dei literal</a> <a href="#3">Parentesi quadre</a> <a href="#4">Abbreviazione per il valore di una proprietà</a> <a href="#5">Limitazioni per i nomi di una proprietà</a> <a href="#6">Controllo di esistenza, operatore “in”</a> <a href="#7">Il ciclo “for…in”</a> <a href="#8">Riepilogo</a>
+				<h3>Naviga tra le lezioni</h3>
+				<a href="#2">Le proprietà dei literal</a> 
+				<a href="#3">Parentesi quadre</a> 
+				<a href="#4">Abbreviazione per il valore di una proprietà</a> 
+				<a href="#5">Limitazioni per i nomi di una proprietà</a> 
+				<a href="#6">Controllo di esistenza, operatore “in”</a> 
+				<a href="#7">Il ciclo “for…in”</a> 
+				<a href="#8">Riepilogo</a>
 			</div>
 		</div>
 	</div>
+
     <!--Sidebar button per aprire/chiudere la sidebar-->
-	 <button class="button" id="side-button" onclick="toggleSidebar()"><i class='bx bx-menu'></i></button> <!--Buttons per andare alla lezione successiva/precedente-->
-	 <button class="nav-button button" id="prev-button" onclick="prevLesson()"><i class='bx bx-chevron-left'></i> <span class="tooltip">Lezione precedente</span></button> <button class="nav-button button" id="next-button" onclick="nextLesson()"><i class='bx bx-chevron-right'></i> <span class="tooltip">Lezione successiva</span></button> <!--Testo del documento-->
+	<button class="button" id="side-button" onclick="toggleSidebar()">
+		<i class='bx bx-menu'></i>
+	</button> 
+
+	<!--Buttons per andare alla lezione successiva/precedente-->
+	<button class="nav-button button" id="prev-button" onclick="prevLesson()">
+		<i class='bx bx-chevron-left'></i> 
+		<span class="tooltip">Lezione precedente</span>
+	</button> 
+	<button class="nav-button button" id="next-button" onclick="nextLesson()">
+		<i class='bx bx-chevron-right'></i> 
+		<span class="tooltip">Lezione successiva</span>
+	</button> 
+
+	<!--Testo del documento-->
 	<div class="main" id="main">
+
 		<!--Pathnav-->
 		<div class="pathnav">
 			<div class="pathnav-container">
@@ -63,6 +91,7 @@
 				</ul>
 			</div>
 		</div>
+
         <!--Lezione-->
 		<div class="document">
 			<h2 id="1">Oggetti</h2>
