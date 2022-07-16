@@ -242,5 +242,8 @@
 	.topbar #logo-mobile {
 		display: inline;
 	}
+	.topbar-button:hover {
+		color: white;
+	}
 }
 
