@@ -3,6 +3,7 @@
 	--my-red: #E72B2D;
 	--my-lightblue: #4b58ab;
 	--my-beige: #f4e9d0;
+	--my-lightgrey: #8b8b8b3f;
 }
 
 * {
@@ -136,7 +137,7 @@
 }
 
 .button:hover {
-	background-color: lightgray;
+	background-color: var(--my-lightgrey);
 }
 
 .nav-button {
@@ -149,7 +150,7 @@
 	font-size: 12px;
 	visibility: hidden;
 	width: 120px;
-	background-color: lightgray;
+	background-color: var(--my-lightgrey);
 	color: black;
 	text-align: center;
 	border-radius: 6px;
