@@ -99,3 +99,35 @@ function prevLesson() {
 function nextLesson() {
     //TODO
 }
+
+// Funzione per calcolare la lunghezza della pagina
+// e posizionare il footer in basso
+function placeFooter() {
+    let hasScrollbar = document.documentElement.scrollHeight > document.documentElement.clientHeight
+    if (!hasScrollbar) {
+        get("footer").style.position = "fixed"
+        get("footer").style.bottom = "0px"
+        get("footer").style.top = "auto"
+    }
+    else {
+        get("footer").style.top = "0px"
+        let h = get("main").scrollHeight
+        get("footer").style.position = "absolute"
+        get("footer").style.top = h + 100 + "px"
+        get("footer").style.bottom = "auto"
+    }
+} 
+
+window.onload = function () {
+    placeFooter()
+}
+
+window.onresize = function () {
+    placeFooter()
+}
+
+
+
+
+
+

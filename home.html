@@ -1,35 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta content="ie=edge" http-equiv="X-UA-Compatible">
 	<title>Template | Omar Criacci</title>
 	<link href="styles/style.css" rel="stylesheet">
+	<script src="scripts/main.js" type="text/javascript" defer></script>
 	<link href="https://fonts.googleapis.com" rel="preconnect">
 	<link href="https://fonts.gstatic.com" rel="preconnect">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body ondragstart="return false;">
 
-    <!--Topbar-->
-	<div class="topbar">
-		<div class="topbar-container">
-			<div class="topbar-logo">
-				<a href="index.html">
-					<img alt="logo" height="70px" id="logo" src="images/unipg-logo.png" width="auto"> 
-					<img alt="logo" height="70px" id="logo-mobile" src="images/unipg-logo-mobile.png" width="auto">
-				</a>
+<body ondragstart="return false;">
+	<div id="body">
+		<!--Topbar-->
+		<div class="topbar">
+			<div class="topbar-container">
+				<div class="topbar-logo">
+					<a href="index.html">
+						<img id="logo" alt="logo" height="70px" src="images/unipg-logo.png" width="auto">
+						<img id="logo-mobile" alt="logo" height="70px" src="images/unipg-logo-mobile.png" width="auto">
+					</a>
+				</div>
+				<div class="topbar-nav">
+					<a id="topbar-title" href="index.html">Documentazione On-Line</a>
+				</div>
+				<div class="topbar-search">
+					<input name="search" placeholder="Cerca..." type="text">
+					<button id="search-button" class="topbar-button" type="submit" onclick="search(value)"><i
+							class="bx bx-search-alt-2"></i></button>
+				</div>
+				<div class="topbar-mobile">
+					<input id="search-mobile" class="search-mobile" name="search" placeholder="Cerca..." type="text">
+					<button id="menu-button" class="topbar-button" onclick="toggleSearchbar()"><i id="menu-img"
+							class='bx bx-menu'></i></button>
+				</div>
 			</div>
-			<div class="topbar-nav">
-				<a href="index.html">Documentazione On-Line</a>
+		</div>
+
+		<!--Sidebar-->
+		<div class="sidebar">
+			<!--Rettangolo che uso per estendere la Sidebar-->
+			<div id="side-rect" class="rect"></div>
+			<div id="sidebar" class="sidebar-container">
+				<div class="sidebar-title">
+					<h3>Capitolo</h3>
+					<a href="#1">Oggetti: le basi</a>
+				</div>
+				<div class="sidebar-nav">
+					<h3>Naviga tra le lezioni</h3>
+					<a href="#2">Le proprietà dei literal</a>
+					<a href="#3">Parentesi quadre</a>
+					<a href="#4">Abbreviazione per il valore di una proprietà</a>
+					<a href="#5">Limitazioni per i nomi di una proprietà</a>
+					<a href="#6">Controllo di esistenza, operatore “in”</a>
+					<a href="#7">Il ciclo “for…in”</a>
+					<a href="#8">Riepilogo</a>
+				</div>
 			</div>
-			<div class="topbar-search">
-				<input name="search" placeholder="Cerca..." type="text"> 
-				<button type="submit"><i class="bx bx-search-alt-2"></i></button>
+		</div>
+
+		<!--Sidebar button per aprire/chiudere la sidebar-->
+		<button id="side-button" class="button" onclick="toggleSidebar()">
+			<i class='bx bx-menu'></i>
+		</button>
+
+		<!--Buttons per andare alla lezione successiva/precedente-->
+		<button id="prev-button" class="nav-button button" onclick="prevLesson()">
+			<i class='bx bx-chevron-left'></i>
+			<span class="tooltip">Lezione precedente</span>
+		</button>
+		<button id="next-button" class="nav-button button" onclick="nextLesson()">
+			<i class='bx bx-chevron-right'></i>
+			<span class="tooltip">Lezione successiva</span>
+		</button>
+
+		<!--Testo del documento-->
+		<div id="main" class="main">
+
+			<!--Pathnav-->
+			<div class="pathnav">
+				<div class="pathnav-container">
+					<ul class="pathnav-list">
+						<li>
+							<a href="#home"><i class='bx bx-home'></i></a>
+						</li>
+						<li><i class='bx bx-right-arrow-alt'></i></li>
+						<li>
+							<a href="#">Documentazione On-Line</a>
+						</li>
+						<li><i class='bx bx-right-arrow-alt'></i></li>
+						<li>
+							<a href="#">Oggetti: le basi</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!--Lezione-->
+			<div class="document">
+				<h2 id="1">Oggetti</h2>
+				<p>Come sappiamo dal capitolo Tipi di dati, in Javascript ci sono otto tipi di dati. Sette di
+					loro
+					sono
+					chiamati “primitivi”, perché i loro valori contengono sempre un singolo elemento (una
+					stringa,
+					un
+					numero, un booleano ecc).</p>
+					<p>Possiamo immaginare un oggetto come un archivio con dei documenti catalogati. Ogni dato viene
+						archiviato
+						utilizzando una specifica chiave. E’ facile trovare un file quando se ne conosce il nome,
+						oppure
+						aggiungerne di nuovi o rimuovere quelli vecchi.</p>
+					<p>Un oggetto vuoto (“archivio vuoto”) può essere creato utilizzando una delle due sintassi:</p>
+					<code>let user = new Object(); // sintassi "costruttore oggetto"<br>
+						let user = {}; // sintassi "oggetto letterale"</code>
+					<p>Solitamente vengono utilizzate le parentesi graffe {...}. Questo tipo di dichiarazione viene
+						chiamata
+						object literal (“oggetto letterale”).</p>
 			</div>
 		</div>
 	</div>
+	<!--Footer-->
+	<div id="footer">
+		<div>
+			<p>© 2022 - Università degli Studi di Perugia</p>
+		</div>
+		<div>
+			<p>Omar Criacci</p>
+		</div>
+		<div class="links">
+			<a href="https://www.instagram.com/omartrj/"><i class='bx bxl-instagram'></i></a>
+			<a href="https://github.com/trejarchs/doc-online"><i class='bx bxl-github'></i></a>
+		</div>					
+	</div>
 </body>
+
 </html>
