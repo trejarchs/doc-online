@@ -1,87 +1,101 @@
+function get(id){
+    return document.getElementById(id)
+}
+
 /* Funzione per 'alzare' la sidebar quando la topbar
    non è più visibile */
-   function hideTopbar(){
+function hideTopbar(){
     if (window.scrollY >= 80){
-       document.getElementById("sidebar").style.top = "0px";
-       document.getElementById("side-button").style.top = "30px";
+       get("sidebar").style.top = "0px"
+       get("side-button").style.top = "30px"
    }
    else {
-       document.getElementById("sidebar").style.top = "90px";
-       document.getElementById("side-button").style.top = "110px";
+        get("sidebar").style.top = "90px"
+        get("side-button").style.top = "110px"
    } 
-};
+}
 
 window.onscroll=function() {
-   hideTopbar();
-};
+   hideTopbar()
+}
 
 
 /* Funzione per controllare se la sidebar è attualmente attiva
  * oppure no,
  * returns true se è attiva, false altrimenti */
 function isSidebarActive(){
-    if (document.getElementById("sidebar").style.width == "0px")
-        return false;
-    else 
-        return true;
-};
+    if (get("sidebar").style.width == "0px")
+        return false
+    return true
+}
 
 function toggleSidebar(){
-    isSidebarActive() ? closeSidebar() : openSidebar();
-};
+    isSidebarActive() ? closeSidebar() : openSidebar()
+}
 
 function openSidebar() {
-    document.getElementById("sidebar").style.width = "250px";
-    document.getElementById("side-rect").style.width = "250px";
-    document.getElementById("side-button").style.left = "270px";
-    document.getElementById("prev-button").style.left = "270px";
-    document.getElementById("main").style.left = "450px"; 
-};
+    get("sidebar").style.width = "250px"
+    get("side-rect").style.width = "250px"
+    get("side-button").style.left = "270px"
+    get("prev-button").style.left = "270px"
+    get("main").style.left = "450px"
+}
 
 function closeSidebar() {
-    document.getElementById("sidebar").style.width = "0px";
-    document.getElementById("side-rect").style.width = "0px";
-    document.getElementById("side-button").style.left = "20px";
-    document.getElementById("prev-button").style.left = "20px";
-    document.getElementById("main").style.left = "200px"; 
-};
+    get("sidebar").style.width = "0px"
+    get("side-rect").style.width = "0px"
+    get("side-button").style.left = "20px"
+    get("prev-button").style.left = "20px"
+    get("main").style.left = "200px"
+}
+
+let x = window.matchMedia("(max-width: 1025px)")
+adjustMain(x)
+x.addListener(adjustMain)
+
+function adjustMain(x) {
+    if (x.matches) { // Se lo schermo è più piccolo di 1025px
+        get("main").style.left = "20px"
+        get("main").style.right = "20px"
+    } else {
+        get("main").style.right = "200px" 
+        isSidebarActive() ?  get("main").style.left = "450px" : get("main").style.left = "200px"
+    }
+  }
+  
 
 /* Funzione per aprire la searchbar */
 function openSearchbar(){
-    let width = window.innerWidth;
-    if (width < 600)
-        document.getElementById("topbar-title").style.display = "none";
-    document.getElementById("search-mobile").style.display = "inline";
-    document.getElementById("menu-img").className = "bx bx-search-alt-2";
-};
+    if (window.innerWidth < 600)
+        get("topbar-title").style.display = "none"
+    get("search-mobile").style.display = "inline"
+    get("menu-img").className = "bx bx-search-alt-2"
+}
 
 function closeSearchbar(){
-    document.getElementById("topbar-title").style.display = "inline";
-    document.getElementById("search-mobile").style.display = "none";
-    document.getElementById("menu-img").className = "bx bx-menu";
-    let input = document.getElementById("search-mobile").value;
-    search(input);
-};
+    get("topbar-title").style.display = "inline"
+    get("search-mobile").style.display = "none"
+    get("menu-img").className = "bx bx-menu"
+}
 
 function isSearchbarOpen(){
-    if ( document.getElementById("search-mobile").style.display == "inline")
-        return true;
-    else
-        return false;
-};
+    if (get("search-mobile").style.display == "inline")
+        return true
+    return false
+}
 
 function toggleSearchbar(){
-    isSearchbarOpen() ? closeSearchbar() : openSearchbar();
-};
+    isSearchbarOpen() ? closeSearchbar() : openSearchbar()
+}
 
-function search(string){
+function search(){
     //TODO
-};
+}
 
 function prevLesson(){
     //TODO
-};
+}
 
 function nextLesson(){
     //TODO
-};
+}

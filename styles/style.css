@@ -74,6 +74,7 @@
 	padding-left: 15px;
 }
 .sidebar-container, .rect {
+	display: inline-block;
 	height: 100%;
 	width: 250px;
 	position: fixed;
@@ -208,16 +209,10 @@
 		overflow-x: hidden;
 	}
 	.sidebar-container, .rect {
-		width: 0px;
-		border: none;
+		display: none;
 	}
 	.button {
 		display: none;
-	}
-	.main {
-		left: 20px;
-		right: 20px;
-		margin: auto;
 	}
 	.topbar-search {
 		display: none;
