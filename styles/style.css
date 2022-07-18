@@ -9,22 +9,23 @@
 	--grey-6: #777;
 	--grey-7: rgb(200, 200, 200);
 	--blue-1: #162936;
-	--blue-2: #26348C; 
-	--blue-3: #505ebf;  
+	--blue-2: #26348C;
+	--blue-3: #505ebf;
 	--blue-4: #84a0ef;
-	--red-1: #E72B2D; 
+	--red-1: #E72B2D;
 	--beige: #faedcd;
 }
- 
+
 * {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
 	font-family: 'Inter', sans-serif;
-	overflow:visible;
+	overflow: visible;
 }
 
-html, body {
+html,
+body {
 	height: 100%;
 }
 
@@ -296,7 +297,7 @@ html {
 	right: 0px;
 	height: 50px;
 	align-items: center;
-	justify-content:space-between;
+	justify-content: space-between;
 	font-size: 13px;
 	padding: 0 20px;
 	transition: left .2s;
@@ -379,7 +380,7 @@ html {
 	.topbar-button:hover {
 		color: white;
 	}
-	
+
 	#footer {
 		left: 0px;
 	}

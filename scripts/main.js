@@ -120,7 +120,7 @@ function placeFooter() {
         get("footer").style.top = h + 100 + "px"
         get("footer").style.bottom = "auto"
     }
-} 
+}
 
 
 // Funzioni per aggiornare la posizione del footer
@@ -139,7 +139,7 @@ window.onchange = function () {
 }
 
 
-    
+
 
 
 
