@@ -13,7 +13,7 @@
 	--blue-3: #505ebf;  
 	--blue-4: #84a0ef;
 	--red-1: #E72B2D; 
-	--beige: #ffe8d6;
+	--beige: #faedcd;
 }
  
 * {
@@ -256,13 +256,22 @@ html {
 	line-height: 25px;
 }
 
-.document code {
+/* .document code {
 	font-family: monospace;
 	display: block;
 	color: var(--grey-2);
 	background-color: var(--beige);
-	padding: 10px 25px;
+	padding: 10px 15px;
 	margin: 20px 0px;
+	border-radius: 15px;
+} */
+
+.document code {
+	font-family: monospace;
+	background-color: var(--beige);
+	border-radius: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .document em {
@@ -270,7 +279,8 @@ html {
 	color: var(--grey-3);
 	padding: 0 5px;
 	border-radius: 5px;
-	font-style:normal;
+	font-style: normal;
+	font-family: monospace;
 }
 
 .document a {
