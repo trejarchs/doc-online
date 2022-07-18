@@ -110,7 +110,7 @@ function placeFooter() {
         get("footer").style.top = "auto"
     }
     else {
-        get("footer").style.top = "0px"
+        get("footer").style.bottom = "0px"
         let h = get("main").scrollHeight
         get("footer").style.position = "absolute"
         get("footer").style.top = h + 100 + "px"
@@ -118,13 +118,23 @@ function placeFooter() {
     }
 } 
 
+
+// Funzioni per aggiornare la posizione del footer
+// a seguito delle modifiche del contenuto della pagina
 window.onload = function () {
     placeFooter()
 }
-
 window.onresize = function () {
     placeFooter()
 }
+window.ontransitionend = function () {
+    placeFooter()
+}
+window.onchange = function () {
+    placeFooter()
+}
+
+
 
 
 
