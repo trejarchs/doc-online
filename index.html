@@ -103,7 +103,7 @@
 			<!--Lezione-->
 			<div class="document">
 				<h2 id="1">Oggetti</h2>
-				<p>Come sappiamo dal capitolo Tipi di dati, in Javascript ci sono otto tipi di dati. Sette di
+				<p>Come sappiamo dal capitolo <a href="">Tipi di dati</a>, in Javascript ci sono otto tipi di dati. Sette di
 					loro
 					sono
 					chiamati “primitivi”, perché i loro valori contengono sempre un singolo elemento (una
@@ -116,7 +116,7 @@
 					In Javascript, essi permeano ogni aspetto del linguaggio. Dobbiamo perciò comprenderli bene
 					prima di
 					procedere nello studio approfondito di un qualsiasi altro argomento.</p>
-				<p>Un oggetto può essere creato tramite le parentesi graffe {...}, con un’opzionale lista di
+				<p>Un oggetto può essere creato tramite le parentesi graffe <em>{ . . . }</em>, con un’opzionale lista di
 					proprietà. Una
 					proprietà è una coppia “chiave: valore”, dove “chiave” è una stringa (detta anche “nome di
 					proprietà”),
@@ -129,27 +129,27 @@
 				<p>Un oggetto vuoto (“archivio vuoto”) può essere creato utilizzando una delle due sintassi:</p>
 				<code>let user = new Object(); // sintassi "costruttore oggetto"<br>
 					let user = {}; // sintassi "oggetto letterale"</code>
-				<p>Solitamente vengono utilizzate le parentesi graffe {...}. Questo tipo di dichiarazione viene
+				<p>Solitamente vengono utilizzate le parentesi graffe <em>{ . . . }</em>. Questo tipo di dichiarazione viene
 					chiamata
-					object literal (“oggetto letterale”).</p>
+					<em>object literal</em> (“oggetto letterale”).</p>
 				<h2 id="2">Le proprietà dei literal</h2>
-				<p>Possiamo inserire subito delle proprietà in {...} come una coppia “key: value”:</p>
+				<p>Possiamo inserire subito delle proprietà in <em>{ . . . }</em> come una coppia “key: value”:</p>
 				<code>let user = { // un oggetto<br>
 					name: "John", // una chiave "name" memorizza il valore "John"<br>
 					age: 30 // una chiave "age" memorizza 30<br>
 					};</code>
 				<p>Una proprietà ha una chiave (conosciuta anche come “nome” o “identificatore”) prima dei due
 					punti
-					":", ed
+					<em>":"</em>, ed
 					un valore alla sua destra.</p>
-				<p>Nell’oggetto user ci sono due proprietà:</p>
+				<p>Nell’oggetto <em>user</em> ci sono due proprietà:</p>
 				<p>
 				<ol>
-					<li>La prima proprietà ha come nome "name" e come valore "John".</li>
-					<li>La seconda ha come nome "age" e come valore 30.</li>
+					<li>La prima proprietà ha come nome <em>"name"</em> e come valore <em>"John"</em>.</li>
+					<li>La seconda ha come nome <em>"age"</em> e come valore <em>30</em>.</li>
 				</ol>
 				</p>
-				<p>L’oggetto user può essere visto come un archivio con due file etichettati come “name” ed
+				<p>L’oggetto <em>user</em> può essere visto come un archivio con due file etichettati come “name” ed
 					“age”.
 				</p>
 				<h2 id="3">Parentesi quadre</h2>
@@ -180,7 +180,7 @@
 					<br>
 					// lo stesso di user["likes birds"] = true;<br>
 					user[key] = true;</code>
-				<p>Qui la variabile key può essere calcolata durante il run-time o dipendere dall’input
+				<p>Qui la variabile <em>key</em> può essere calcolata durante il run-time o dipendere dall’input
 					dell’utente.
 					Successivamente possiamo utilizzarla per accedere alla proprietà. Questa caratteristica ci
 					fornisce una
@@ -213,7 +213,7 @@
 					proprietà da una variabile è molto comune, tanto che, per comodità, esiste una speciale
 					abbreviazione.
 				</p>
-				<p>Invece di scrivere name:name possiamo semplicemente scrivere name, come in questo esempio:
+				<p>Invece di scrivere <em>name:name</em> possiamo semplicemente scrivere <em>name</em>, come in questo esempio:
 				</p>
 				<code>function makeUser(name, age) {<br>
 					return {<br>
@@ -246,7 +246,7 @@
 					di dato speciale che andremo ad analizzare più avanti).</p>
 				<p>Nomi di proprietà con altri tipi “primitivi” vengono automaticamente convertiti a stringhe.
 				</p>
-				<p>Ad esempio, un numero 0 diventa una stringa "0" quando viene utilizzato come chiave di una
+				<p>Ad esempio, un numero <em>0</em> diventa una stringa <em>"0"</em> quando viene utilizzato come chiave di una
 					proprietà:</p>
 				<code>let obj = {<br>
 					0: "test" // equivale a "0": "test"<br>
@@ -255,7 +255,7 @@
 					// entrambi gli alert accedono alla stessa proprietà (il numero 0 viene convertito nella stringa "0")<br>
 					alert( obj["0"] ); // test<br>
 					alert( obj[0] ); // test (stessa proprietà)</code>
-				<p>Esiste una piccola falla per la proprietà __proto__. Non possiamo impostarla ad un valore
+				<p>Esiste una piccola falla per la proprietà <em>__proto__</em>. Non possiamo impostarla ad un valore
 					diverso
 					dal
 					tipo oggetto:</p>
@@ -265,7 +265,7 @@
 				<p>Come possiamo osservare nel codice sopra, l’assegnazione del numero intero 5 è stata
 					ignorata.
 				</p>
-				<p>Studieremo più nel dettaglio __proto__ nel capitolo, e vedremo come sistemare questo
+				<p>Studieremo più nel dettaglio <em>__proto__</em> nel <a href="">capitolo</a>, e vedremo come sistemare questo
 					comportamento.</p>
 				<h2 id="6">Controllo di esistenza, operatore “in”</h2>
 				<p>Un’importante caratteristica degli oggetti, in Javascript, è che è possibile accedere a una
