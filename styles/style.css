@@ -1,11 +1,21 @@
 :root {
-	--my-blue: #26348C;
-	--my-red: #E72B2D;
-	--my-lightblue: #4b58ab;
-	--my-beige: #f4e9d0;
-	--my-lightgrey: #8b8b8b3f;
+	--white: white;
+	--black: black;
+	--grey-1: #222;
+	--grey-2: #333;
+	--grey-3: #444;
+	--grey-4: #555;
+	--grey-5: #666;
+	--grey-6: #777;
+	--grey-7: rgb(200, 200, 200);
+	--blue-1: #162936;
+	--blue-2: #26348C; 
+	--blue-3: #505ebf;  
+	--blue-4: #84a0ef;
+	--red-1: #E72B2D; 
+	--beige: #ffe8d6;
 }
-
+ 
 * {
 	box-sizing: border-box;
 	padding: 0;
@@ -18,13 +28,17 @@ html, body {
 	height: 100%;
 }
 
+html {
+	background-color: var(--white);
+}
+
 .topbar-container {
-	background-color: var(--my-blue);
+	background-color: var(--blue-2);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	height: 90px;
-	border-bottom: 4px solid var(--my-red);
+	border-bottom: 4px solid var(--red-1);
 }
 
 .topbar #logo {
@@ -39,7 +53,7 @@ html, body {
 }
 
 .topbar-nav a {
-	color: white;
+	color: var(--white);
 	text-decoration: none;
 	font-size: 35px;
 	position: absolute;
@@ -64,7 +78,7 @@ html, body {
 
 .topbar-button {
 	background-color: transparent;
-	color: white;
+	color: var(--white);
 	font-size: 35px;
 	border: none;
 	cursor: pointer;
@@ -72,7 +86,7 @@ html, body {
 }
 
 .topbar-button:hover {
-	color: var(--my-red);
+	color: var(--red-1);
 	transition: color .3s;
 }
 
@@ -99,10 +113,10 @@ html, body {
 	position: fixed;
 	top: 90px;
 	left: 0;
-	background-color: var(--my-lightblue);
+	background-color: var(--blue-3);
 	overflow-x: hidden;
 	padding-top: 0px;
-	border-right: 4px solid var(--my-blue);
+	border-right: 2px solid var(--blue-2);
 	transition: top .1s, width .2s;
 }
 
@@ -116,33 +130,33 @@ html, body {
 	padding: 30px 8px 8px 15px;
 	font-size: 16px;
 	font-variant: small-caps;
-	color: lightgray;
+	color: var(--grey-7);
 }
 
 .sidebar a {
 	padding: 4px 10px 4px 25px;
 	text-decoration: none;
 	font-size: 14px;
-	color: white;
+	color: var(--white);
 	display: block;
 	transition: color .2s;
 }
 
 .sidebar a:hover {
-	color: var(--my-red);
+	color: var(--red-1);
 }
 
 .button {
 	position: fixed;
 	font-size: 30px;
 	cursor: pointer;
-	color: var(--my-blue);
+	color: var(--blue-2);
 	background-color: transparent;
 	border: none;
 }
 
 .button:hover {
-	background-color: var(--my-lightgrey);
+	background-color: var(--grey-7);
 }
 
 .nav-button {
@@ -155,8 +169,8 @@ html, body {
 	font-size: 12px;
 	visibility: hidden;
 	width: 120px;
-	background-color: var(--my-lightgrey);
-	color: black;
+	background-color: var(--grey-7);
+	color: var(--black);
 	text-align: center;
 	border-radius: 6px;
 	padding: 5px 0;
@@ -197,12 +211,13 @@ html, body {
 .pathnav-list li {
 	list-style-type: none;
 	display: inline;
-	color: black;
+	color: var(--black);
 }
 
 .pathnav-list a {
 	text-decoration: none;
-	color: var(--my-blue);
+	color: var(--blue-2);
+	font-weight: 400;
 }
 
 .main {
@@ -221,6 +236,7 @@ html, body {
 	line-height: 21px;
 	margin-bottom: 5px;
 	text-align: justify;
+	color: var(--black);
 }
 
 .main h2,
@@ -229,7 +245,7 @@ html, body {
 	font-weight: 700;
 	margin-bottom: 10px;
 	margin-top: 20px;
-	color: var(--my-blue);
+	color: var(--blue-2);
 }
 
 .main .document li {
@@ -241,21 +257,25 @@ html, body {
 .main code {
 	font-family: monospace;
 	display: block;
-	background-color: var(--my-beige);
+	color: var(--black);
+	background-color: var(--beige);
 	padding: 10px 25px;
 	margin: 20px 0px;
 }
 
 #footer {
 	display: flex;
-	background-color: #444;
-	color: lightgrey;
-	width: 100%;
+	/* background-color: #444;
+	color: lightgrey; */
+	color: var(--black);
+	right: 0px;
 	height: 50px;
 	align-items: center;
 	justify-content:space-between;
 	font-size: 13px;
 	padding: 0 20px;
+	transition: left .2s;
+	border-top: var(--red-1) solid 2px;
 }
 
 #footer .divisor {
@@ -280,11 +300,11 @@ html, body {
 }
 
 #footer-links a {
-	color: lightgray;
+	color: var(--grey-5);
 }
 
 #footer-links a:hover {
-	color: var(--my-red);
+	color: var(--red-1);
 }
 
 
@@ -333,5 +353,9 @@ html, body {
 
 	.topbar-button:hover {
 		color: white;
+	}
+	
+	#footer {
+		left: 0px;
 	}
 }

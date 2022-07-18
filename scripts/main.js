@@ -39,6 +39,7 @@ function openSidebar() {
     get("side-button").style.left = "270px"
     get("prev-button").style.left = "270px"
     get("main").style.left = "450px"
+    get("footer").style.left = "250px"
 }
 
 function closeSidebar() {
@@ -47,6 +48,7 @@ function closeSidebar() {
     get("side-button").style.left = "20px"
     get("prev-button").style.left = "20px"
     get("main").style.left = "200px"
+    get("footer").style.left = "0px"
 }
 
 let x = window.matchMedia("(max-width: 1025px)")
@@ -57,9 +59,11 @@ function adjustMain(x) {
     if (x.matches) { // Se lo schermo è più piccolo di 1025px
         get("main").style.left = "20px"
         get("main").style.right = "20px"
+        get("footer").style.left = "0px"
     } else {
         get("main").style.right = "200px"
         isSidebarActive() ? get("main").style.left = "450px" : get("main").style.left = "200px"
+        isSidebarActive() ? get("footer").style.left = "250px" : get("footer").style.left = "0px"
     }
 }
 
