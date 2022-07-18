@@ -2,6 +2,27 @@ function get(id) {
     return document.getElementById(id)
 }
 
+window.onscroll = function () {
+    hideTopbar()
+}
+// Funzioni per aggiornare la posizione del footer
+// a seguito delle modifiche del contenuto della pagina
+window.onload = function () {
+    placeFooter()
+    hideTopbar()
+}
+window.onresize = function () {
+    placeFooter()
+    hideTopbar()
+}
+window.ontransitionend = function () {
+    placeFooter()
+}
+window.onchange = function () {
+    placeFooter()
+}
+
+
 /* Funzione per 'alzare' la sidebar quando la topbar
    non è più visibile */
 function hideTopbar() {
@@ -13,10 +34,6 @@ function hideTopbar() {
         get("sidebar").style.top = "90px"
         get("side-button").style.top = "110px"
     }
-}
-
-window.onscroll = function () {
-    hideTopbar()
 }
 
 
@@ -123,20 +140,7 @@ function placeFooter() {
 }
 
 
-// Funzioni per aggiornare la posizione del footer
-// a seguito delle modifiche del contenuto della pagina
-window.onload = function () {
-    placeFooter()
-}
-window.onresize = function () {
-    placeFooter()
-}
-window.ontransitionend = function () {
-    placeFooter()
-}
-window.onchange = function () {
-    placeFooter()
-}
+
 
 
 
