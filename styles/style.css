@@ -202,10 +202,11 @@ body {
 }
 
 /* ===================
-    CONTENUTO PRINCIALE
+    CONTENUTO PRINCIPALE
 
     * 1.    Lezione
     * 2.    Homepage
+    * 3.    Capitolo
     =================== */
 .main {
     min-height: calc(100vh - 90px - 50px);

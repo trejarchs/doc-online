@@ -12,7 +12,7 @@ let footer = document.getElementById("footer")
 /*============
     * FUNZIONI
     =============*/
-
+    
 window.onscroll = function () {
     hideTopbar()
 }
@@ -71,7 +71,7 @@ function openSidebar() {
     footer.style.width = "calc(100% - 250px)"
 }
 
-/* FUnzione per chiudere la sidebar */
+/* Funzione per chiudere la sidebar */
 function closeSidebar() {
     sidebar.style.width = "0px"
     sideRect.style.width = "0px"
@@ -91,7 +91,7 @@ adjustMain(x)
 x.addListener(adjustMain)
 
 function adjustMain(x) {
-    if (x.matches) { // Se lo schermo è più piccolo di 850px
+    if (x.matches) { // Se lo schermo è più piccolo di 853px
         lesson.style.marginLeft = "20px"
         lesson.style.marginRight = "20px"
         pathNav.style.marginLeft = "20px"
@@ -110,7 +110,6 @@ function toggleMenu() {
 
 function isMenuActive() {
     //TODO
-    return true
 }
 
 function closeMenu() {
@@ -121,6 +120,34 @@ function openMenu() {
     //TODO
 }
 
+/* Funzioni per navigare tra le lezioni */
+function prevLesson() {
+    //TODO
+}
+
+function nextLesson() {
+    //TODO
+}
+
+function getCurrentPage() {
+    /* class Page {
+        constructor(chapter, lesson) {
+            this.chapter = chapter
+            this.lesson = lesson
+        }
+    }
+
+    let curPage = window.location.pathname  //  "/lezioni/4-1-oggetti.html" 
+        .split("/")
+        .pop()  //  "4-1-oggetti.html"
+        .split("-")
+
+    let chapter = curPage[0]
+    let lesson = curPage[1]
+        
+    curPage = new Page(chapter, lesson)
+    return curPage */
+}
 
 
 
