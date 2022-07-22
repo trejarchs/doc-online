@@ -1,154 +1,125 @@
-function get(id) {
-    return document.getElementById(id)
-}
+/*============
+    * ELEMENTI
+    =============*/
+let sidebar = document.getElementById("sidebar")
+let sideRect = document.getElementById("sidebar-rect")
+let sideBtn = document.getElementById("side-btn")
+let prevBtn = document.getElementById("prev-btn")
+let lesson = document.getElementById("lesson")
+let pathNav = document.getElementById("pathnav")
+let footer = document.getElementById("footer")
+
+/*============
+    * FUNZIONI
+    =============*/
 
 window.onscroll = function () {
     hideTopbar()
 }
-// Funzioni per aggiornare la posizione del footer
-// a seguito delle modifiche del contenuto della pagina
-window.onload = function () {
-    placeFooter()
-    hideTopbar()
-}
-window.onresize = function () {
-    placeFooter()
-    hideTopbar()
-}
-window.ontransitionend = function () {
-    placeFooter()
-}
-window.onchange = function () {
-    placeFooter()
-}
 
-
-/* Funzione per 'alzare' la sidebar quando la topbar
-   non è più visibile */
+/* Funzione per aggiornare la posizione della sidebar
+ * quando la topbar non è più visibile */
 function hideTopbar() {
-    if (window.scrollY >= 80) {
-        get("sidebar").style.top = "0px"
-        get("side-button").style.top = "30px"
-    }
-    else {
-        get("sidebar").style.top = "90px"
-        get("side-button").style.top = "110px"
+    if (window.scrollY > 100) {
+        sidebar.style.top = "0px"
+        sideBtn.style.top = "30px"
+    } else {
+        sidebar.style.top = "90px"
+        sideBtn.style.top = "110px"
     }
 }
 
+/* Se la sidebar è attiva, chiude la Sidebar
+ * altrimenti la apre */
+function toggleSidebar() {
+    isSidebarActive() ? closeSidebar() : openSidebar()
+    updateMainPosition()
+}
 
 /* Funzione per controllare se la sidebar è attualmente attiva
  * oppure no,
  * returns true se è attiva, false altrimenti */
 function isSidebarActive() {
-    if (get("sidebar").style.width == "0px")
+    if (sidebar.style.width == "0px")
         return false
     return true
 }
 
-function toggleSidebar() {
-    isSidebarActive() ? closeSidebar() : openSidebar()
+/* Funzione per aggiornare la posizione del main a seconda
+ * dello stato della Sidebar */
+function updateMainPosition() {
+    if (isSidebarActive()) {
+        lesson.style.marginLeft = "max(350px, 30vw)"
+        lesson.style.marginRight = "max(100px, calc(30vw - 250px))"
+        pathNav.style.marginLeft = "max(350px, 30vw)"
+        pathNav.style.marginRight = "max(100px, calc(30vw - 250px))"
+    }
+    else {
+        lesson.style.marginLeft = "max(100px, 21.9vw)"   //21.9vw per preservare la larghezza originale del contenuto
+        lesson.style.marginRight = "max(100px, 21.9vw)"
+        pathNav.style.marginLeft = "max(100px, 21.9vw)"
+        pathNav.style.marginRight = "max(100px, 21.9vw)"
+    }
 }
 
+/* Funzione per aprire la sidebar */
 function openSidebar() {
-    get("sidebar").style.width = "250px"
-    get("side-rect").style.width = "250px"
-    get("side-button").style.left = "270px"
-    get("prev-button").style.left = "270px"
-    get("main").style.left = "450px"
-    get("footer").style.left = "250px"
+    sidebar.style.width = "250px"
+    sideRect.style.width = "250px"
+    sideBtn.style.left = "270px"
+    prevBtn.style.left = "270px"
+    footer.style.width = "calc(100% - 250px)"
 }
 
+/* FUnzione per chiudere la sidebar */
 function closeSidebar() {
-    get("sidebar").style.width = "0px"
-    get("side-rect").style.width = "0px"
-    get("side-button").style.left = "20px"
-    get("prev-button").style.left = "20px"
-    get("main").style.left = "200px"
-    get("footer").style.left = "0px"
+    sidebar.style.width = "0px"
+    sideRect.style.width = "0px"
+    sideBtn.style.left = "20px"
+    prevBtn.style.left = "20px"
+    footer.style.width = "100%"
 }
 
-let x = window.matchMedia("(max-width: 1025px)")
+
+/* Quando chiudo/apro la sidebar, la funzione updateMainPosition() sovrascrive 
+ * anche le proprietà all'interno del @media query (in particolare i margini 
+ * right/left di lesson e pathNav e la width del footer), quindi è necessario 
+ * scrivere una funzione che controlli sempre la dimensione della finestra e 
+ * aggiusti queste proprietà di conseguenza */
+let x = window.matchMedia("(max-width: 853px)")
 adjustMain(x)
 x.addListener(adjustMain)
 
 function adjustMain(x) {
-    if (x.matches) { // Se lo schermo è più piccolo di 1025px
-        get("main").style.left = "20px"
-        get("main").style.right = "20px"
-        get("footer").style.left = "0px"
+    if (x.matches) { // Se lo schermo è più piccolo di 850px
+        lesson.style.marginLeft = "20px"
+        lesson.style.marginRight = "20px"
+        pathNav.style.marginLeft = "20px"
+        pathNav.style.marginRight = "20px"
+        footer.style.width = "100%"
     } else {
-        get("main").style.right = "200px"
-        isSidebarActive() ? get("main").style.left = "450px" : get("main").style.left = "200px"
-        isSidebarActive() ? get("footer").style.left = "250px" : get("footer").style.left = "0px"
+        updateMainPosition()
+        isSidebarActive() ? footer.style.width = "calc(100% - 250px)" : footer.style.width = "100%"
     }
 }
 
 
-/* Funzione per aprire la searchbar */
-function openSearchbar() {
-    if (window.innerWidth < 600)
-        get("topbar-title").style.display = "none"
-    get("search-mobile").style.display = "inline"
-    get("menu-img").className = "bx bx-search-alt-2"
+function toggleMenu() {
+    isMenuActive() ? closeMenu() : openMenu()
 }
 
-function closeSearchbar() {
-    get("topbar-title").style.display = "inline"
-    get("search-mobile").style.display = "none"
-    get("menu-img").className = "bx bx-menu"
+function isMenuActive() {
+    //TODO
+    return true
 }
 
-function isSearchbarOpen() {
-    if (get("search-mobile").style.display == "inline")
-        return true
-    return false
-}
-
-function toggleSearchbar() {
-    isSearchbarOpen() ? closeSearchbar() : openSearchbar()
-}
-
-function search() {
+function closeMenu() {
     //TODO
 }
 
-function prevLesson() {
+function openMenu() {
     //TODO
 }
-
-function nextLesson() {
-    //TODO
-}
-
-// Funzione per calcolare la lunghezza della pagina
-// e posizionare il footer in basso
-function placeFooter() {
-    let hasScrollbar = document.documentElement.scrollHeight > document.documentElement.clientHeight
-    if (!hasScrollbar) {
-        get("footer").style.position = "fixed"
-        get("footer").style.bottom = "0px"
-        get("footer").style.top = "auto"
-    }
-    else {
-        get("footer").style.bottom = "0px"
-        let h = get("main").scrollHeight
-        get("footer").style.position = "absolute"
-        get("footer").style.top = h + 100 + "px"
-        get("footer").style.bottom = "auto"
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 

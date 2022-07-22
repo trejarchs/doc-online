@@ -1,5 +1,6 @@
 :root {
-	--white: white;
+	--bg-color: #f1f1f1;
+    --white: white;
 	--black: black;
 	--grey-1: #222;
 	--grey-2: #333;
@@ -13,65 +14,62 @@
 	--blue-3: #505ebf;
 	--blue-4: #84a0ef;
 	--red-1: #E72B2D;
-	--beige: #faedcd;
+	--beige: #faf1db;
+
+    --sidebar-width: 0px;
 }
 
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 	padding: 0;
 	margin: 0;
-	font-family: 'Inter', sans-serif;
-	overflow: visible;
+    overflow: visible;
 }
 
-html,
 body {
-	height: 100%;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
 }
 
-html {
-	background-color: var(--white);
+/* ========
+    TOPBAR
+    ======== */
+#topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    background-color: var(--blue-2);
+    border-bottom: 4px solid var(--red-1);
 }
 
-.topbar-container {
-	background-color: var(--blue-2);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 90px;
-	border-bottom: 4px solid var(--red-1);
+#topbar-title {
+    display: flex;
+    align-items: center;
 }
 
-.topbar #logo {
-	margin-left: 20px;
+#topbar-logo {
+    margin-left: 20px;
+    margin-right: 50px;
 }
 
-.topbar #logo-mobile {
-	display: none;
-	margin-top: 5px;
-	margin-left: 10px;
-	margin-right: 10px;
-}
-
-.topbar-nav a {
-	color: var(--white);
-	text-decoration: none;
-	font-size: 28px;
+#topbar-title {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 28px;
 	font-weight: 500;
 	font-variant: small-caps;
-	position: absolute;
-	left: 250px;
-	top: 20px;
 }
 
-.topbar-search {
-	display: flex;
-	justify-content: space-between;
-	margin-right: 30px;
+#topbar-search {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
 }
 
-.topbar-search input {
-	padding: 6px;
+.search-bar {
+    width: 200px;
+    padding: 6px;
 	padding-left: 15px;
 	font-size: 16px;
 	border: none;
@@ -80,64 +78,53 @@ html {
 }
 
 .topbar-button {
-	background-color: transparent;
+    background-color: transparent;
 	color: var(--white);
 	font-size: 35px;
 	border: none;
 	cursor: pointer;
-	margin-left: 10px;
+    margin-left: 10px;
 }
 
 .topbar-button:hover {
-	color: var(--red-1);
-	transition: color .3s;
+    color: var(--red-1);
+	transition: color .2s;
 }
 
-.topbar-mobile {
-	display: none;
-	margin-right: 20px;
+#menu-button-mobile {
+    display: none;
 }
 
-.search-mobile {
-	width: 100%;
-	height: 30px;
-	font-size: 16px;
-	margin-bottom: 5px;
-	border: none;
-	border-radius: 20px;
-	padding-left: 15px;
+/* ========
+    SIDEBAR
+    ======== */
+#sidebar,
+#sidebar-rect {
+    position: fixed;
+    height: 100%;
+    --sidebar-width: 250px;
+    width: var(--sidebar-width);
+    background-color: var(--blue-3);
+    border-right: 2px solid var(--blue-2);
+    overflow-x: hidden;
+    transition: top .1s, width .2s;
 }
 
-.sidebar-container,
-.rect {
-	display: inline-block;
-	height: 100%;
-	width: 250px;
-	position: fixed;
-	top: 90px;
-	left: 0;
-	background-color: var(--blue-3);
-	overflow-x: hidden;
-	padding-top: 0px;
-	border-right: 2px solid var(--blue-2);
-	transition: top .1s, width .2s;
-}
-
-.rect {
+#sidebar-rect {
 	top: 0px;
 	height: 90px;
 	z-index: -1;
 }
 
-.sidebar h3 {
-	padding: 30px 8px 8px 15px;
+#sidebar h3 {
+    padding: 30px 8px 8px 15px;
 	font-size: 16px;
 	font-variant: small-caps;
 	color: lightgray;
 }
 
-.sidebar a {
-	padding: 4px 10px 4px 25px;
+#sidebar a {
+    padding: 4px 10px 4px 25px;
 	text-decoration: none;
 	font-size: 14px;
 	color: var(--white);
@@ -145,30 +132,34 @@ html {
 	transition: color .2s;
 }
 
-.sidebar a:hover {
+#sidebar a:hover {
 	color: var(--red-1);
 }
 
-.button {
-	position: fixed;
+/* ========
+    BOTTONI
+    ======== */
+.btn {
+    position: fixed;
 	font-size: 30px;
 	cursor: pointer;
 	color: var(--blue-2);
 	background-color: transparent;
-	border: none;
+    border: none;
+    
 }
 
-.button:hover {
+.btn:hover {
 	background-color: var(--grey-7);
 }
 
-.nav-button {
+.nav-btn {
 	font-size: 50px;
 	border-radius: 10%;
 	top: 50%;
 }
 
-.nav-button .tooltip {
+.nav-btn .tooltip {
 	font-size: 12px;
 	visibility: hidden;
 	width: 120px;
@@ -181,151 +172,205 @@ html {
 	top: 62px;
 }
 
-.nav-button:hover .tooltip {
+.nav-btn:hover .tooltip {
 	visibility: visible;
 }
 
-#next-button {
+#next-btn {
 	right: 20px;
-	transition: background-color .2s;
 }
 
-#next-button .tooltip {
+#next-btn .tooltip {
 	right: 0px;
 }
 
-#prev-button {
+#prev-btn {
 	left: 270px;
-	transition: left .2s, background-color .2s;
+    transition: left .2s;
 }
 
-#prev-button .tooltip {
+#prev-btn .tooltip {
 	left: 0px;
 }
 
-#side-button {
+#side-btn {
 	border-radius: 50%;
 	padding: 8px 9px 4px 9px;
 	left: 270px;
 	top: 110px;
-	transition: top .1s, left .2s, background-color .2s;
+    transition: top .1s, left .2s;
 }
 
-.pathnav-list li {
-	list-style-type: none;
-	display: inline;
-	color: var(--black);
+/* ===================
+    CONTENUTO PRINCIALE
+
+    * 1.    Lezione
+    * 2.    Homepage
+    =================== */
+.main {
+    min-height: calc(100vh - 90px - 50px);
+    font-size: 15px;
+    overflow-x: hidden; 
+    line-height: 23px;    
 }
 
-.pathnav-list a {
-	text-decoration: none;
+/* ==========
+    1. Lezione 
+    ========== */
+#pathnav,
+#lesson {
+    position: relative;
+    text-align: justify;
+    margin-left: max(350px, 30vw);
+    margin-right: max(100px, calc(30vw - 250px));
+    transition: margin-left .2s, margin-right .2s;
+}
+
+#lesson {
+    margin-bottom: 50px;
+}
+
+#pathnav {
+    margin-top: 30px;
+    margin-bottom: -20px;
+}
+
+#pathnav-list li {
+    list-style-type: none;
+    display: inline;
+}
+
+#pathnav-list a {
+    text-decoration: none;
 	color: var(--blue-3);
 	font-weight: 400;
 }
 
-.main {
-	position: absolute;
-	left: 450px;
-	right: 200px;
-	top: 125px;
-	max-width: 850px;
-	margin: auto;
-	padding-bottom: 70px;
-	font-size: 15px;
-	transition: left .2s;
-}
-
-.main p {
-	line-height: 21px;
-	margin-bottom: 5px;
-	text-align: justify;
-	color: var(--black);
-}
-
-.main h2,
-.main h3 {
-	font-size: 25px;
+#lesson h2 {
+    font-size: 25px;
 	font-weight: 700;
-	margin-bottom: 10px;
-	margin-top: 20px;
-	color: var(--blue-2);
+    color: var(--blue-2);
+    margin: 35px 0px 17px 0px;
 }
 
-.main .document li {
-	margin-left: 30px;
+#lesson p {
+    margin: 15px 0;
+}
+
+#lesson li {
+    margin-left: 20px;
 	list-style-type: disc;
-	line-height: 25px;
 }
 
-/* .document code {
-	font-family: monospace;
-	display: block;
-	color: var(--grey-2);
-	background-color: var(--beige);
-	padding: 10px 15px;
-	margin: 20px 0px;
-	border-radius: 15px;
-} */
-
-.document code {
-	font-family: monospace;
-	background-color: var(--beige);
+#lesson code {
+    background-color: var(--beige);
+    border: 1px solid var(--grey-5);
 	border-radius: 10px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+    margin: 10px 0;
+    line-height: 18px;
+    display: block;
 }
 
-.document em {
-	background-color: var(--beige);
+#lesson em {
+    background-color: var(--beige);
 	color: var(--grey-3);
 	padding: 0 5px;
 	border-radius: 5px;
+    box-shadow: 1px 1px #888888;
 	font-style: normal;
 	font-family: monospace;
 }
 
-.document a {
-	text-decoration: none;
+#lesson a {
+    text-decoration: none;
 	color: var(--blue-3);
 }
 
-#footer {
-	display: flex;
-	/* background-color: #444;
-	color: lightgrey; */
-	color: var(--black);
-	right: 0px;
-	height: 50px;
-	align-items: center;
-	justify-content: space-between;
+/* ===========
+    2. Homepage 
+    =========== */
+#main-title-container,
+#chapters-container {
+    display: flex;
+	justify-content: center;
+}
+
+#main-title,
+#chapters {
+    width: 1000px;
+    margin: 20px 20px;
+    text-align: justify;
+}
+
+#main-title h1 {
+    margin: 20px 0;
+    color: var(--grey-2);
+}
+
+#main-title p {
+    font-size: 17px;
+}
+
+.ch-lessons {
+    display: grid;
+  	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	list-style: none;
+	gap: 0px 33px;
+    margin: 10px 0 25px 0;
+    justify-items: start;
+}
+
+.ch-lessons {
+    font-size: 16px;
+}
+
+.number-lesson {
+    font-family: monospace;
 	font-size: 13px;
-	padding: 0 20px;
-	transition: left .2s;
-	border-top: var(--red-1) solid 2px;
+	margin-right: 10px;
+}
+
+.chapter a {
+    color: var(--blue-2);
+	text-decoration: none; 
+}
+
+.chapter h2 {
+    font-size: 21px;
+}
+
+/* ========
+    FOOTER
+    ======== */
+#footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    border-top: var(--red-1) solid 2px;
+    padding: 0 20px;
+    font-size: 13px;
+    width: calc(100% - var(--sidebar-width));
+    float: inline-end;
+    transition: width .2s;
 }
 
 #footer .divisor {
-	margin: 0 25px;
+    margin: 0 15px;
 }
 
-#footer-uni {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
+#footer-title {
+    display: flex;
+    align-items: center;
 }
 
 #footer-contacts {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-}
-
-#footer-links {
-	display: flex;
-	font-size: 36px;
+    display: flex;
+    align-items: center;
 }
 
 #footer-links a {
+    font-size: 36px;
 	color: var(--grey-5);
 }
 
@@ -334,54 +379,22 @@ html {
 }
 
 
-@media screen and (max-width: 1025px) {
-	html {
-		overflow-x: hidden;
-	}
+@media screen and (max-width: 853px) {
 
-	.sidebar-container,
-	.rect {
-		display: none;
-	}
+    #logo-name {display: none}
+    #topbar-logo {margin-right: 20px}
+    #search-bar {display: none}
+    #search-button {display: none}
+    #menu-button-mobile {display: inline}
+    #topbar-title {font-size: 20px}
+    #sidebar-container {display: none}
+    .btn {display: none}
+    #footer {width: 100%}
 
-	.button {
-		display: none;
-	}
-
-	.topbar-search {
-		display: none;
-	}
-
-	.topbar-mobile {
-		display: flex;
-		align-items: center;
-	}
-
-	.search-mobile {
-		display: none;
-	}
-
-	.topbar-nav a {
-		display: inline;
-		font-size: 23px;
-		width: 200px;
-		top: 15px;
-		left: 100px;
-	}
-
-	.topbar #logo {
-		display: none;
-	}
-
-	.topbar #logo-mobile {
-		display: inline;
-	}
-
-	.topbar-button:hover {
-		color: white;
-	}
-
-	#footer {
-		left: 0px;
-	}
 }
+
+
+
+
+
+
