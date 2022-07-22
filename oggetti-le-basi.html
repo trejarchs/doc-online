@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Template | Omar Criacci</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <script src="scripts/main.js" type="text/javascript" defer></script>
+    <script src="scripts/lesson.js" type="text/javascript" defer></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!--Topbar-->
+    <header id="topbar">
+        <div id="topbar-title">
+            <div id="topbar-logo">
+                <a href="index.html">
+                    <img id="logo" alt="Logo Università di Perugia" height="70px" src="images/unipg-logo.png"
+                        width="auto">
+                    <img id="logo-name" alt="" height="70px" src="images/unipg-name.png" width="auto">
+                </a>
+            </div>
+            <div id="topbar-title-container">
+                <a id="topbar-title" href="index.html">Documentazione On-Line</a>
+            </div>
+        </div>
+        <div id="topbar-search">
+            <input id="search-bar" class="search-bar" name="search" placeholder="Cerca..." type="text">
+            <button id="search-button" class="topbar-button" type="submit" onclick="search(value)">
+                <i class="bx bx-search-alt-2"></i>
+            </button>
+            <button id="menu-button-mobile" class="topbar-button" onclick="toggleMenu()">
+                <i class='bx bx-menu'></i>
+            </button>
+        </div>
+    </header>
+
+    <!--Sidebar-->
+    <div id="sidebar-container">
+        <div id="sidebar-rect"></div>
+        <div id="sidebar">
+            <div id="sidebar-chapter">
+                <h3>Indice dei capitoli</h3>
+            </div>
+            <div id="sidebar-nav">
+                <a href="#">Introduzione</a>
+                <a href="#">Le basi di JavaScript</a>
+                <a href="#">Qualità del codice</a>
+                <a href="#">Oggetti: le basi</a>
+                <a href="#">Tipi di dato</a>
+                <a href="#">Gestione avanzata delle funzioni</a>
+                <a href="#">Configurazione delle proprietà dell'oggetto</a>
+            </div>
+        </div>
+    </div>
+
+    <!--Bottoni-->
+    <button id="side-btn" class="btn" onclick="toggleSidebar()">
+        <i class='bx bx-menu'></i>
+    </button>
+    <button id="prev-btn" class="nav-btn btn" onclick="prevLesson()">
+        <i class='bx bx-chevron-left'></i>
+        <span class="tooltip">Lezione precedente</span>
+    </button>
+    <button id="next-btn" class="nav-btn btn" onclick="nextLesson()">
+        <i class='bx bx-chevron-right'></i>
+        <span class="tooltip">Lezione successiva</span>
+    </button>
+
+    <!--Main Content-->
+    <main class="main">
+
+        <!--Pathnav-->
+        <div id="pathnav">
+            <ul id="pathnav-list">
+                <li><a href="index.html"><i class='bx bx-home'></i></a></li>
+                <li><i class='bx bx-right-arrow-alt'></i></li>
+                <li><a href="index.html">Documentazione On-Line</a></li>
+            </ul>
+        </div>
+
+        <!--Lezione-->
+        <div id="lesson">
+            <h2>Oggetti: le basi</h2>
+        </div>
+
+    </main>
+
+    <!--Footer-->
+    <footer id="footer">
+        <div id="footer-title">
+            <div>
+                <p>© 2022 - Università degli Studi di Perugia</p>
+            </div>
+            <div class="divisor">
+                <p>|</p>
+            </div>
+        </div>
+        <div id="footer-contacts">
+            <div id="footer-name">
+                <p>Omar Criacci</p>
+            </div>
+            <div class="divisor">
+                <p>|</p>
+            </div>
+            <div id="footer-links">
+                <a href="https://github.com/trejarchs/doc-online"><i class='bx bxl-github'></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
