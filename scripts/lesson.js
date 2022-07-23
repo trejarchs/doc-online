@@ -18,7 +18,7 @@ window.onscroll = function () {
 /* Funzione per aggiornare la posizione della sidebar
  * quando la topbar non è più visibile */
 function hideTopbar() {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 90) {
         sidebar.style.top = "0px"
         sideBtn.style.top = "30px"
     } else {
