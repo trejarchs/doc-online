@@ -277,7 +277,6 @@ body {
 #lesson-page {
     margin-left: max(350px, 30vw);
     margin-right: max(100px, calc(30vw - 250px));
-    text-align: justify;
 }
 
 #pathnav {
@@ -290,6 +289,7 @@ body {
 
 #lesson {
     margin-bottom: 50px;
+    text-align: justify;
 }
 
 #lesson h2 {
