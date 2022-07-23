@@ -212,7 +212,6 @@ body {
     font-size: 15px;
     padding-top: 30px;
     line-height: 23px;
-    text-align: justify;
 }
 
 .main a {
@@ -278,6 +277,7 @@ body {
 #lesson-page {
     margin-left: max(350px, 30vw);
     margin-right: max(100px, calc(30vw - 250px));
+    text-align: justify;
 }
 
 #pathnav {
