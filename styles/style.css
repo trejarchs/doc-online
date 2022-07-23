@@ -199,6 +199,44 @@ body {
     transition: top .1s, left .2s;
 }
 
+#nav-btns-mobile {
+    display: none;
+    justify-content:space-evenly;
+}
+
+.nav-btn-mobile {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin-top: 30px;
+    padding: 5px;
+    background-color: var(--bg-color);
+    border: 3px solid var(--grey-7);
+}
+
+.nav-btn-mobile i {
+    font-size: 40px;
+    color: var(--grey-4)
+}
+
+.nav-btn-mobile span {
+    font-size: 12px;
+}
+
+#prev-btn-mobile {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-right: 1px;
+    justify-content: left;
+}
+
+#next-btn-mobile {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-left: -1px;
+    justify-content: right;
+}
+
 /* ===================
     CONTENUTO PRINCIPALE
 
@@ -433,6 +471,10 @@ body {
 
     .btn {
         display: none
+    }
+
+    #nav-btns-mobile {
+        display: flex;
     }
 
     #lesson-page {
