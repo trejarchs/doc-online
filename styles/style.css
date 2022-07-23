@@ -237,12 +237,13 @@ body {
 #main-title,
 #chapters {
     width: 1000px;
-    margin: 20px 20px;
+    padding: 20px 0;
+    margin: 0px 20px;
     text-align: justify;
 }
 
 #main-title h1 {
-    margin: 20px 0;
+    margin-bottom: 20px;
     color: var(--grey-3);
 }
 
@@ -325,6 +326,7 @@ body {
     font-style: normal;
     font-family: monospace;
 }
+
 /* ===========
     3. Capitolo 
     =========== */
@@ -335,14 +337,14 @@ body {
 }
 
 #list-container {
-   border: 4px solid var(--grey-7);
-   border-radius: 10px;
-   margin: 40px 0 50px 0;
+    border: 4px solid var(--grey-7);
+    border-radius: 10px;
+    margin: 40px 0 50px 0;
 }
 
 #lesson-list li {
     padding: 15px 10px;
-    border-bottom: 2px solid var(--grey-7); 
+    border-bottom: 2px solid var(--grey-7);
     list-style-type: none;
     font-size: 16px;
 }
@@ -354,7 +356,6 @@ body {
     font-family: monospace;
     color: var(--grey-4)
 }
-
 
 /* ========
     FOOTER
@@ -428,6 +429,11 @@ body {
 
     .btn {
         display: none
+    }
+
+    #lesson-page {
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     #footer {
