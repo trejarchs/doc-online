@@ -5,8 +5,7 @@ let sidebar = document.getElementById("sidebar")
 let sideRect = document.getElementById("sidebar-rect")
 let sideBtn = document.getElementById("side-btn")
 let prevBtn = document.getElementById("prev-btn")
-let lesson = document.getElementById("lesson")
-let pathNav = document.getElementById("pathnav")
+let main = document.getElementById("lesson-page")
 let footer = document.getElementById("footer")
 
 /*============
@@ -31,8 +30,26 @@ function hideTopbar() {
 /* Se la sidebar è attiva, chiude la Sidebar
  * altrimenti la apre */
 function toggleSidebar() {
+    mainTransition()
     isSidebarActive() ? closeSidebar() : openSidebar()
     updateMainPosition()
+
+}
+
+/* Funzione per far sì che il contenuto del main si sposti a destra/sinistra 
+ * a seconda dello stato della sidebar in maniera fluida.
+ * Non potevo aggiungere direttamente la proprietà 
+ * "transition: margin-left .2s, margin-right .2s" al main-content perchè
+ * tale proprietà avrebbe sovrascritto la proprietà "transition: none" che 
+ * mi permette di avere una animazione fluida di spostamento nel caso di 
+ * window resizing.
+ * In questo modo riesco ad avere un'animazione fluida sia nel caso di window 
+ * resizing sia quando si apre/chiude la sidebar. */
+function mainTransition() {
+    main.style.transition = "0.2s"
+    setTimeout(function () {
+        main.style.transition = "0s"
+    }, 200)
 }
 
 /* Funzione per controllare se la sidebar è attualmente attiva
@@ -48,16 +65,12 @@ function isSidebarActive() {
  * dello stato della Sidebar */
 function updateMainPosition() {
     if (isSidebarActive()) {
-        lesson.style.marginLeft = "max(350px, 30vw)"
-        lesson.style.marginRight = "max(100px, calc(30vw - 250px))"
-        pathNav.style.marginLeft = "max(350px, 30vw)"
-        pathNav.style.marginRight = "max(100px, calc(30vw - 250px))"
+        main.style.marginLeft = "max(350px, 30vw)"
+        main.style.marginRight = "max(100px, calc(30vw - 250px))"
     }
     else {
-        lesson.style.marginLeft = "max(100px, 21.9vw)"   //21.9vw per preservare la larghezza originale del contenuto
-        lesson.style.marginRight = "max(100px, 21.9vw)"
-        pathNav.style.marginLeft = "max(100px, 21.9vw)"
-        pathNav.style.marginRight = "max(100px, 21.9vw)"
+        main.style.marginLeft = "max(100px, 21.9vw)"   //21.9vw per preservare la larghezza originale del contenuto
+        main.style.marginRight = "max(100px, 21.9vw)"
     }
 }
 
@@ -80,21 +93,20 @@ function closeSidebar() {
 }
 
 
-/* Quando chiudo/apro la sidebar, la funzione updateMainPosition() sovrascrive 
- * anche le proprietà all'interno del @media query (in particolare i margini 
- * right/left di lesson e pathNav e la width del footer), quindi è necessario 
- * scrivere una funzione che controlli sempre la dimensione della finestra e 
- * aggiusti queste proprietà di conseguenza */
+/* Quando chiudo/apro la sidebar, le funzioni updateMainPosition() e 
+ * open/closeSidebar() sovrascrivono anche le proprietà all'interno del 
+ * @media query (in particolare i margini right/left di main-content
+ * e la width del footer), quindi è necessario scrivere una funzione 
+ * che controlli sempre la dimensione della finestra e aggiusti queste 
+ * proprietà di conseguenza */
 let x = window.matchMedia("(max-width: 853px)")
 adjustMain(x)
 x.addListener(adjustMain)
 
 function adjustMain(x) {
     if (x.matches) { // Se lo schermo è più piccolo di 853px
-        lesson.style.marginLeft = "20px"
-        lesson.style.marginRight = "20px"
-        pathNav.style.marginLeft = "20px"
-        pathNav.style.marginRight = "20px"
+        main.style.marginLeft = "20px"
+        main.style.marginRight = "20px"
         footer.style.width = "100%"
     } else {
         updateMainPosition()
