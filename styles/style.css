@@ -511,6 +511,10 @@ body {
         margin-right: 20px;
     }
 
+    #nav-btns-mobile {
+        display:flex;
+    }
+
     .main a:hover {
         text-decoration: none;
         color: var(--blue-3);
