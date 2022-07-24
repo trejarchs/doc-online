@@ -356,6 +356,7 @@ body {
     margin: 10px 0;
     line-height: 18px;
     display: block;
+    font-family: monospace;
 }
 
 #lesson .em {

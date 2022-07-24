@@ -130,8 +130,8 @@ let user = {};  // sintassi &quot;oggetto letterale&quot;</code></pre>
                 <h2 id="2">Le proprietà dei literal</h2>
                 <p>Possiamo inserire subito delle proprietà in <span class="em">{...}</span> come una coppia “key: value”:</p>
                 <pre><code class="js">let user = { // un oggetto
-	name: &quot;John&quot;, // una chiave &quot;name&quot; memorizza il valore &quot;John&quot;
-	age: 30 // una chiave &quot;age&quot; memorizza 30
+    name: &quot;John&quot;, // una chiave &quot;name&quot; memorizza il valore &quot;John&quot;
+    age: 30 // una chiave &quot;age&quot; memorizza 30
 };</code></pre>
                 <p>Una proprietà ha una chiave (conosciuta anche come “nome” o “identificatore”) prima dei due
                     punti
@@ -183,8 +183,8 @@ user[key] = true;</code></pre>
                     grande flessibilità.</p>
                 <p>Ad esempio:</p>
                 <pre><code class="js">let user = {
-	name: &quot;John&quot;,
-	age: 30
+    name: &quot;John&quot;,
+    age: 30
 };
 					
 let key = prompt(&quot;What do you want to know about the user?&quot;, &quot;name&quot;);
@@ -195,9 +195,9 @@ alert( user[key] ); // John (se si inserisce &quot;name&quot;)</code></pre>
                 <p>Spesso usiamo delle variabili esistenti come valori per i nomi delle proprietà.</p>
                 <p>Ad esempio:</p>
                 <pre><code class="js">function makeUser(name, age) {
-	return {
-		name: name,
-		age: age
+    return {
+        name: name,
+        age: age
 		// ...altre propriet&agrave;
 	};
 }
@@ -213,16 +213,16 @@ alert(user.name); // John</code></pre>
                     esempio:
                 </p>
                 <pre><code class="js">function makeUser(name, age) {
-	return {
-		name, // equivalente a name: name
-		age // equivalente a age: age
-		// ...
-	};
+    return {
+        name, // equivalente a name: name
+        age // equivalente a age: age
+        // ...
+    };
 }</code></pre>
                 <p>Possiamo usare entrambe le proprietà, normale e abbreviata, nello stesso oggetto:</p>
                 <pre><code class="js">let user = {
-	name, // equivalente a name:name
-	age: 30
+    name, // equivalente a name:name
+    age: 30
 };</code></pre>
                 <h2 id="5">Limitazioni per i nomi di una proprietà</h2>
                 <p>Come già sappiamo, una variabile non può avere il nome uguale ad una parola chiave riservata
@@ -231,9 +231,9 @@ alert(user.name); // John</code></pre>
                 <p>Ma per le proprietà degli oggetti, non ci sono restrizioni:</p>
                 <pre><code class="js">// queste variabili sono tutte corrette
 let obj = {
-	for: 1,
-	let: 2,
-	return: 3
+    for: 1,
+    let: 2,
+    return: 3
 };
 					
 alert( obj.for + obj.let + obj.return ); // 6</code></pre>
@@ -247,7 +247,7 @@ alert( obj.for + obj.let + obj.return ); // 6</code></pre>
                     di una
                     proprietà:</p>
                 <pre><code class="js">let obj = {
-	0: &quot;test&quot; // equivale a &quot;0&quot;: &quot;test&quot;
+    0: &quot;test&quot; // equivale a &quot;0&quot;: &quot;test&quot;
 };
 					
 // entrambi gli alert accedono alla stessa propriet&agrave; (il numero 0 viene convertito nella stringa &quot;0&quot;)
@@ -306,16 +306,16 @@ alert( key in user ); // true, prende il nome da key e controlla l'esistenza del
 }</code></pre>
                 <p>Ad esempio, proviamo a mostrare tutte le proprietà di <span class="em">user</span>:</p>
                 <pre><code class="js">let user = {
-	name: &quot;John&quot;,
-	age: 30,
-	isAdmin: true
+    name: &quot;John&quot;,
+    age: 30,
+    isAdmin: true
 };
 					
 for (let key in user) {
-	// keys
-	alert( key ); // name, age, isAdmin
-	// valori delle keys
-	alert( user[key] ); // John, 30, true
+    // keys
+    alert( key ); // name, age, isAdmin
+    // valori delle keys
+    alert( user[key] ); // John, 30, true
 }</code></pre>
                 <p>Da notare che tutti i costrutti “for” ci consentono di dichiarare delle variabili da
                     utilizzare
