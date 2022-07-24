@@ -85,7 +85,7 @@ body {
     border: none;
     cursor: pointer;
     margin-left: 10px;
-} 
+}
 
 .topbar-button:hover {
     color: var(--red-1);
@@ -202,7 +202,7 @@ body {
 
 #nav-btns-mobile {
     display: none;
-    justify-content:space-evenly;
+    justify-content: space-between;
 }
 
 .nav-btn-mobile {
@@ -352,7 +352,7 @@ body {
 
 #lesson code {
     background-color: var(--beige);
-    border: 2px solid var(--beige-2);
+    border: 1px solid var(--beige-2);
     border-radius: 10px;
     margin: 10px 0;
     line-height: 18px;
@@ -466,6 +466,10 @@ body {
         font-size: 20px
     }
 
+    .topbar-button:hover {
+        color: var(--white)
+    }
+
     #sidebar-container {
         display: none
     }
@@ -481,6 +485,11 @@ body {
     #lesson-page {
         margin-left: 20px;
         margin-right: 20px;
+    }
+
+    .main a:hover {
+        text-decoration: none;
+        color: var(--blue-3);
     }
 
     #footer {
