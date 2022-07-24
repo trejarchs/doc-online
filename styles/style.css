@@ -69,8 +69,8 @@ body {
 }
 
 .search-bar {
-    width: 200px;
     padding: 6px;
+    width: 100%;
     padding-left: 15px;
     font-size: 16px;
     border: none;
@@ -92,8 +92,36 @@ body {
     transition: color .2s;
 }
 
-#menu-button-mobile {
+#menu-container {
     display: none;
+}
+
+#menu-content {
+    display: flex;
+    justify-content:right;
+    position: absolute;
+    background-color: var(--blue-2);
+    border-bottom: 4px solid var(--red-1);
+    color: white;
+    z-index: 1;
+    top: 86px;
+    left: 0;
+    width: 100vw;
+    height: 0px;
+    transition: height .2s;
+}
+
+#searchbar-mobile,
+#searchbtn-mobile {
+    display: none;
+}
+
+#searchbar-mobile {
+    margin-left: 20px;
+}
+
+#searchbtn-mobile {
+    margin-right: 20px;
 }
 
 /* ========
@@ -458,8 +486,8 @@ body {
         display: none
     }
 
-    #menu-button-mobile {
-        display: inline
+    #menu-container {
+        display: block;
     }
 
     #topbar-title {
@@ -476,10 +504,6 @@ body {
 
     .btn {
         display: none
-    }
-
-    #nav-btns-mobile {
-        display: flex;
     }
 
     #lesson-page {

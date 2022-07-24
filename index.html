@@ -34,9 +34,17 @@
             <button id="search-button" class="topbar-button" type="submit" onclick="search(value)">
                 <i class="bx bx-search-alt-2"></i>
             </button>
-            <button id="menu-button-mobile" class="topbar-button" onclick="toggleMenu()">
-                <i class='bx bx-menu'></i>
-            </button>
+            <div id="menu-container">
+                <button id="menu-button-mobile" class="topbar-button" onclick="toggleMenu()">
+                    <i class='bx bx-menu'></i>
+                </button>
+                <div id="menu-content">
+                    <input id="searchbar-mobile" class="search-bar" name="search" placeholder="Cerca..." type="text">
+                    <button id="searchbtn-mobile" class="topbar-button" type="submit" onclick="search(value)">
+                        <i class="bx bx-search-alt-2"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -75,7 +83,7 @@
                         </li>
                     </ul>
                 </div>
-            
+
                 <div class="chapter">
                     <div class="ch-title">
                         <h2><a href="">Le basi di JavaScript</a></h2>
