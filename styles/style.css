@@ -239,6 +239,7 @@ body {
     width: 50%;
     margin-top: 30px;
     padding: 5px;
+    cursor: pointer;
     background-color: var(--bg-color);
     border: 3px solid var(--grey-7);
 }

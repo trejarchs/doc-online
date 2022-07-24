@@ -1,4 +1,14 @@
+/*============
+    * ELEMENTI
+    =============*/
+const menuContent = document.getElementById("menu-content")
+const searchBar = document.getElementById("searchbar-mobile")
+const searchBtn = document.getElementById("searchbtn-mobile")
+const icon = document.querySelectorAll("#menu-button-mobile i")[0]
 
+/*============
+    * FUNZIONI
+    =============*/
 /* Funzioni per gestire la pressione del menu-button
  * visibile dal cellulare */
 function toggleMenu() {
@@ -6,16 +16,10 @@ function toggleMenu() {
 }
 
 function isMenuActive() {
-    let menuContent = document.getElementById("menu-content")
-    return menuContent.style.height == "65px"
+    return menuContent.style.height == "50px"
 }
 
 function closeMenu() {
-    let menuContent = document.getElementById("menu-content")
-    let searchBar = document.getElementById("searchbar-mobile")
-    let searchBtn = document.getElementById("searchbtn-mobile")
-    let icon = document.querySelectorAll("#menu-button-mobile i")[0]
-
     searchBar.style.display = "none"
     searchBtn.style.display = "none"
     menuContent.style.height = "0px"
@@ -23,15 +27,10 @@ function closeMenu() {
     icon.style.fontSize = "36px"
 }
 
-function openMenu() {
-    let menuContent = document.getElementById("menu-content")
-    let searchBar = document.getElementById("searchbar-mobile")
-    let searchBtn = document.getElementById("searchbtn-mobile")
-    let icon = document.querySelectorAll("#menu-button-mobile i")[0]
-
+function openMenu() {    
     searchBar.style.display = "block"
     searchBtn.style.display = "block"
-    menuContent.style.height = "65px"
+    menuContent.style.height = "50px"
     icon.className = "bx bx-x"
     icon.style.fontSize = "42px"
 }

@@ -1,12 +1,12 @@
 /*============
     * ELEMENTI
     =============*/
-let sidebar = document.getElementById("sidebar")
-let sideRect = document.getElementById("sidebar-rect")
-let sideBtn = document.getElementById("side-btn")
-let prevBtn = document.getElementById("prev-btn")
-let main = document.getElementById("lesson-page")
-let footer = document.getElementById("footer")
+const sidebar = document.getElementById("sidebar")
+const sideRect = document.getElementById("sidebar-rect")
+const sideBtn = document.getElementById("side-btn")
+const prevBtn = document.getElementById("prev-btn")
+const main = document.getElementById("lesson-page")
+const footer = document.getElementById("footer")
 
 /*============
     * FUNZIONI
