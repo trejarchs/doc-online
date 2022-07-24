@@ -316,6 +316,10 @@ body {
     text-align: justify;
 }
 
+#chapters {
+    text-align: left;
+}
+
 #main-title h1 {
     color: var(--grey-3);
 }
