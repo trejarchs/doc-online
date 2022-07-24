@@ -316,10 +316,6 @@ body {
     text-align: justify;
 }
 
-#chapters {
-    text-align: left;
-}
-
 #main-title h1 {
     color: var(--grey-3);
 }
@@ -335,7 +331,6 @@ body {
     list-style: none;
     gap: 0px 33px;
     margin: 10px 0 25px 0;
-    justify-items: start;
     font-size: 16px;
 }
 
