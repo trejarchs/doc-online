@@ -5,10 +5,20 @@ const menuContent = document.getElementById("menu-content")
 const searchBar = document.getElementById("searchbar-mobile")
 const searchBtn = document.getElementById("searchbtn-mobile")
 const icon = document.querySelectorAll("#menu-btn-mobile i")[0]
+const main = document.getElementsByClassName("main")[0]
 
 /*============
     * FUNZIONI
     =============*/
+/* Se il menu è attivo e l'utente clicca fuori dalla topbar
+ * oppure scrolla la pagina, chiude il menu */
+main.onclick = function () {
+    closeMenu()
+}
+window.onscroll = function () {
+    closeMenu()
+}
+
 /* Funzioni per gestire la pressione del menu-btn
  * visibile dal cellulare */
 function toggleMenu() {

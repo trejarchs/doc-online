@@ -5,7 +5,7 @@ const sidebar = document.getElementById("sidebar")
 const sideRect = document.getElementById("sidebar-rect")
 const sideBtn = document.getElementById("side-btn")
 const prevBtn = document.getElementById("prev-btn")
-const main = document.getElementById("lesson-page")
+const lessonPage = document.getElementById("lesson-page")
 const footer = document.getElementById("footer")
 
 /*============
@@ -13,6 +13,7 @@ const footer = document.getElementById("footer")
     =============*/
 window.onscroll = function () {
     hideTopbar()
+    closeMenu()
 }
 
 /* Funzione per aggiornare la posizione della sidebar
@@ -46,9 +47,9 @@ function toggleSidebar() {
  * In questo modo riesco ad avere un'animazione fluida sia nel caso di window 
  * resizing sia quando si apre/chiude la sidebar. */
 function mainTransition() {
-    main.style.transition = "0.2s"
+    lessonPage.style.transition = "0.2s"
     setTimeout(function () {
-        main.style.transition = "0s"
+        lessonPage.style.transition = "0s"
     }, 200)
 }
 
@@ -65,12 +66,12 @@ function isSidebarActive() {
  * dello stato della Sidebar */
 function updateMainPosition() {
     if (isSidebarActive()) {
-        main.style.marginLeft = "max(350px, 30vw)"
-        main.style.marginRight = "max(100px, calc(30vw - 250px))"
+        lessonPage.style.marginLeft = "max(350px, 30vw)"
+        lessonPage.style.marginRight = "max(100px, calc(30vw - 250px))"
     }
     else {
-        main.style.marginLeft = "max(100px, 21.9vw)"   //21.9vw per preservare la larghezza originale del contenuto
-        main.style.marginRight = "max(100px, 21.9vw)"
+        lessonPage.style.marginLeft = "max(100px, 21.9vw)"   //21.9vw per preservare la larghezza originale del contenuto
+        lessonPage.style.marginRight = "max(100px, 21.9vw)"
     }
 }
 
@@ -105,8 +106,8 @@ x.addListener(adjustMain)
 
 function adjustMain(x) {
     if (x.matches) { // Se lo schermo è più piccolo di 853px
-        main.style.marginLeft = "20px"
-        main.style.marginRight = "20px"
+        lessonPage.style.marginLeft = "20px"
+        lessonPage.style.marginRight = "20px"
         footer.style.width = "100%"
     } else {
         updateMainPosition()

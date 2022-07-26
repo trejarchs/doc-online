@@ -263,7 +263,6 @@ body {
 #next-btn-mobile {
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
-    border-left: -1px;
     justify-content: right;
 }
 
