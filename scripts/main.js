@@ -4,12 +4,12 @@
 const menuContent = document.getElementById("menu-content")
 const searchBar = document.getElementById("searchbar-mobile")
 const searchBtn = document.getElementById("searchbtn-mobile")
-const icon = document.querySelectorAll("#menu-button-mobile i")[0]
+const icon = document.querySelectorAll("#menu-btn-mobile i")[0]
 
 /*============
     * FUNZIONI
     =============*/
-/* Funzioni per gestire la pressione del menu-button
+/* Funzioni per gestire la pressione del menu-btn
  * visibile dal cellulare */
 function toggleMenu() {
     isMenuActive() ? closeMenu() : openMenu()
