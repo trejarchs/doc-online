@@ -75,93 +75,89 @@
     <button id="side-btn" class="btn" onclick="toggleSidebar()">
         <i class='bx bx-menu'></i>
     </button>
-    <button id="prev-btn" class="nav-btn btn" onclick="prevLesson()">
-        <i class='bx bx-chevron-left'></i>
-        <span class="tooltip">Lezione precedente</span>
-    </button>
-    <button id="next-btn" class="nav-btn btn" onclick="nextLesson()">
-        <i class='bx bx-chevron-right'></i>
-        <span class="tooltip">Lezione successiva</span>
-    </button>
-
 
     <!--Main Content-->
     <main id="lesson-page" class="main">
-            <!--Pathnav-->
-            <div id="pathnav">
-                <ul id="pathnav-list">
-                    <li><a href="../index.html"><i class='bx bx-home'></i></a></li>
-                    <li><i class='bx bx-right-arrow-alt'></i></li>
-                    <li><a href="../index.html">Indice dei contenuti</a></li>
-                    <li><i class='bx bx-right-arrow-alt'></i></li>
-                    <li><a href="oggetti-le-basi.html">Oggetti: le basi</a></li>
-                </ul>
-            </div>
+        <!--Pathnav-->
+        <div id="pathnav">
+            <ul id="pathnav-list">
+                <li><a href="../index.html"><i class='bx bx-home'></i></a></li>
+                <li><i class='bx bx-right-arrow-alt'></i></li>
+                <li><a href="../index.html">Indice dei contenuti</a></li>
+                <li><i class='bx bx-right-arrow-alt'></i></li>
+                <li><a href="oggetti-le-basi.html">Oggetti: le basi</a></li>
+            </ul>
+        </div>
 
-            <!--Lezione-->
-            <div id="lesson">
-                <h2 id="1">Oggetti</h2>
-                <p>Come sappiamo dal capitolo <a href="">Tipi di dati</a>, in Javascript ci sono otto tipi di dati.
-                    Sette di
-                    loro
-                    sono
-                    chiamati “primitivi”, perché i loro valori contengono sempre un singolo elemento (una
-                    stringa,
-                    un
-                    numero, un booleano ecc).</p>
-                <p>Gli oggetti, invece, vengono utilizzati per catalogare vari tipi di dati ed altri elementi
-                    più
-                    complessi.
-                    In Javascript, essi permeano ogni aspetto del linguaggio. Dobbiamo perciò comprenderli bene
-                    prima di
-                    procedere nello studio approfondito di un qualsiasi altro argomento.</p>
-                <p>Un oggetto può essere creato tramite le parentesi graffe <span class="em">{...}</span>, con un’opzionale lista
-                    di
-                    proprietà. Una
-                    proprietà è una coppia “chiave: valore”, dove “chiave” è una stringa (detta anche “nome di
-                    proprietà”),
-                    mentre “valore” può essere qualsiasi cosa.</p>
-                <p>Possiamo immaginare un oggetto come un archivio con dei documenti catalogati. Ogni dato viene
-                    archiviato
-                    utilizzando una specifica chiave. E’ facile trovare un file quando se ne conosce il nome,
-                    oppure
-                    aggiungerne di nuovi o rimuovere quelli vecchi.</p>
-                <p>Un oggetto vuoto (“archivio vuoto”) può essere creato utilizzando una delle due sintassi:</p>
-                <pre><code class="js">let user = new Object(); // sintassi &quot;costruttore oggetto&quot;
+        <!--Lezione-->
+        <div id="lesson">
+            <h2 id="1">Oggetti</h2>
+            <p>Come sappiamo dal capitolo <a href="">Tipi di dati</a>, in Javascript ci sono otto tipi di dati.
+                Sette di
+                loro
+                sono
+                chiamati “primitivi”, perché i loro valori contengono sempre un singolo elemento (una
+                stringa,
+                un
+                numero, un booleano ecc).</p>
+            <p>Gli oggetti, invece, vengono utilizzati per catalogare vari tipi di dati ed altri elementi
+                più
+                complessi.
+                In Javascript, essi permeano ogni aspetto del linguaggio. Dobbiamo perciò comprenderli bene
+                prima di
+                procedere nello studio approfondito di un qualsiasi altro argomento.</p>
+            <p>Un oggetto può essere creato tramite le parentesi graffe <span class="em">{...}</span>, con un’opzionale
+                lista
+                di
+                proprietà. Una
+                proprietà è una coppia “chiave: valore”, dove “chiave” è una stringa (detta anche “nome di
+                proprietà”),
+                mentre “valore” può essere qualsiasi cosa.</p>
+            <p>Possiamo immaginare un oggetto come un archivio con dei documenti catalogati. Ogni dato viene
+                archiviato
+                utilizzando una specifica chiave. E’ facile trovare un file quando se ne conosce il nome,
+                oppure
+                aggiungerne di nuovi o rimuovere quelli vecchi.</p>
+            <p>Un oggetto vuoto (“archivio vuoto”) può essere creato utilizzando una delle due sintassi:</p>
+            <pre><code class="js">let user = new Object(); // sintassi &quot;costruttore oggetto&quot;
 let user = {};  // sintassi &quot;oggetto letterale&quot;</code></pre>
-                <p>Solitamente vengono utilizzate le parentesi graffe <span class="em">{...}</span>. Questo tipo di dichiarazione
-                    viene
-                    chiamata
-                    <span class="em">object literal</span> (“oggetto letterale”).
-                </p>
-                <h2 id="2">Le proprietà dei literal</h2>
-                <p>Possiamo inserire subito delle proprietà in <span class="em">{...}</span> come una coppia “key: value”:</p>
-                <pre><code class="js">let user = { // un oggetto
+            <p>Solitamente vengono utilizzate le parentesi graffe <span class="em">{...}</span>. Questo tipo di
+                dichiarazione
+                viene
+                chiamata
+                <span class="em">object literal</span> (“oggetto letterale”).
+            </p>
+            <h2 id="2">Le proprietà dei literal</h2>
+            <p>Possiamo inserire subito delle proprietà in <span class="em">{...}</span> come una coppia “key: value”:
+            </p>
+            <pre><code class="js">let user = { // un oggetto
     name: &quot;John&quot;, // una chiave &quot;name&quot; memorizza il valore &quot;John&quot;
     age: 30 // una chiave &quot;age&quot; memorizza 30
 };</code></pre>
-                <p>Una proprietà ha una chiave (conosciuta anche come “nome” o “identificatore”) prima dei due
-                    punti
-                    <span class="em">":"</span>, ed
-                    un valore alla sua destra.
-                </p>
-                <p>Nell’oggetto <span class="em">user</span> ci sono due proprietà:</p>               
-                <ol>
-                    <li>La prima proprietà ha come nome <span class="em">"name"</span> e come valore <span class="em">"John"</span>.</li>
-                    <li>La seconda ha come nome <span class="em">"age"</span> e come valore <span class="em">30</span>.</li>
-                </ol>
-                <p>L’oggetto <span class="em">user</span> può essere visto come un archivio con due file etichettati come “name” ed
-                    “age”.
-                </p>
-                <h2 id="3">Parentesi quadre</h2>
-                <p>Per le proprietà con nomi “multi-parola” l’accesso con la notazione puntata non funziona:</p>
-                <pre><code class="js">// questo darebbe un errore di sintassi
+            <p>Una proprietà ha una chiave (conosciuta anche come “nome” o “identificatore”) prima dei due
+                punti
+                <span class="em">":"</span>, ed
+                un valore alla sua destra.
+            </p>
+            <p>Nell’oggetto <span class="em">user</span> ci sono due proprietà:</p>
+            <ol>
+                <li>La prima proprietà ha come nome <span class="em">"name"</span> e come valore <span
+                        class="em">"John"</span>.</li>
+                <li>La seconda ha come nome <span class="em">"age"</span> e come valore <span class="em">30</span>.</li>
+            </ol>
+            <p>L’oggetto <span class="em">user</span> può essere visto come un archivio con due file etichettati come
+                “name” ed
+                “age”.
+            </p>
+            <h2 id="3">Parentesi quadre</h2>
+            <p>Per le proprietà con nomi “multi-parola” l’accesso con la notazione puntata non funziona:</p>
+            <pre><code class="js">// questo darebbe un errore di sintassi
 user.likes birds = true</code></pre>
-                <p>Questo perché il punto richiede che la chiave che segue sia un identificatore valido. Un
-                    identificatore
-                    non deve avere spazi (oltre a seguire le altre limitazioni già studiate).</p>
-                <p>Per aggirare questo vincolo esiste una “notazione con parentesi quadre”:</p>
-                <pre><code class="js">let user = {};
+            <p>Questo perché il punto richiede che la chiave che segue sia un identificatore valido. Un
+                identificatore
+                non deve avere spazi (oltre a seguire le altre limitazioni già studiate).</p>
+            <p>Per aggirare questo vincolo esiste una “notazione con parentesi quadre”:</p>
+            <pre><code class="js">let user = {};
 
 // set
 user[&quot;likes birds&quot;] = true;
@@ -171,23 +167,24 @@ alert(user[&quot;likes birds&quot;]); // true
 					
 // delete
 delete user[&quot;likes birds&quot;];</code> </pre>
-                <p>Ora funziona. Da notare che la stringa all’interno delle parentesi va comunque messa tra
-                    virgolette
-                    (singole o doppie).</p>
-                <p>Le parentesi quadre permettono di passare il nome della proprietà come risultato di un
-                    espressione (a
-                    differenza delle stringhe letterali) , ad esempio una variabile:</p>
-                <pre><code class="js">let key = &quot;likes birds&quot;;
+            <p>Ora funziona. Da notare che la stringa all’interno delle parentesi va comunque messa tra
+                virgolette
+                (singole o doppie).</p>
+            <p>Le parentesi quadre permettono di passare il nome della proprietà come risultato di un
+                espressione (a
+                differenza delle stringhe letterali) , ad esempio una variabile:</p>
+            <pre><code class="js">let key = &quot;likes birds&quot;;
 
 // lo stesso di user[&quot;likes birds&quot;] = true;
 user[key] = true;</code></pre>
-                <p>Qui la variabile <span class="em">key</span> può essere calcolata durante il run-time o dipendere dall’input
-                    dell’utente.
-                    Successivamente possiamo utilizzarla per accedere alla proprietà. Questa caratteristica ci
-                    fornisce una
-                    grande flessibilità.</p>
-                <p>Ad esempio:</p>
-                <pre><code class="js">let user = {
+            <p>Qui la variabile <span class="em">key</span> può essere calcolata durante il run-time o dipendere
+                dall’input
+                dell’utente.
+                Successivamente possiamo utilizzarla per accedere alla proprietà. Questa caratteristica ci
+                fornisce una
+                grande flessibilità.</p>
+            <p>Ad esempio:</p>
+            <pre><code class="js">let user = {
     name: &quot;John&quot;,
     age: 30
 };
@@ -196,10 +193,10 @@ let key = prompt(&quot;What do you want to know about the user?&quot;, &quot;nam
 					
 // accesso tramite variabile
 alert( user[key] ); // John (se si inserisce &quot;name&quot;)</code></pre>
-                <h2 id="4">Abbreviazione per il valore di una proprietà</h2>
-                <p>Spesso usiamo delle variabili esistenti come valori per i nomi delle proprietà.</p>
-                <p>Ad esempio:</p>
-                <pre><code class="js">function makeUser(name, age) {
+            <h2 id="4">Abbreviazione per il valore di una proprietà</h2>
+            <p>Spesso usiamo delle variabili esistenti come valori per i nomi delle proprietà.</p>
+            <p>Ad esempio:</p>
+            <pre><code class="js">function makeUser(name, age) {
     return {
         name: name,
         age: age
@@ -209,32 +206,33 @@ alert( user[key] ); // John (se si inserisce &quot;name&quot;)</code></pre>
 					
 let user = makeUser(&quot;John&quot;, 30);
 alert(user.name); // John</code></pre>
-                <p>Nell’esempio sopra, le proprietà hanno lo stesso nome delle varibili. Il caso d’uso di creare
-                    una
-                    proprietà da una variabile è molto comune, tanto che, per comodità, esiste una speciale
-                    abbreviazione.
-                </p>
-                <p>Invece di scrivere <span class="em">name:name</span> possiamo semplicemente scrivere <span class="em">name</span>, come in questo
-                    esempio:
-                </p>
-                <pre><code class="js">function makeUser(name, age) {
+            <p>Nell’esempio sopra, le proprietà hanno lo stesso nome delle varibili. Il caso d’uso di creare
+                una
+                proprietà da una variabile è molto comune, tanto che, per comodità, esiste una speciale
+                abbreviazione.
+            </p>
+            <p>Invece di scrivere <span class="em">name:name</span> possiamo semplicemente scrivere <span
+                    class="em">name</span>, come in questo
+                esempio:
+            </p>
+            <pre><code class="js">function makeUser(name, age) {
     return {
         name, // equivalente a name: name
         age // equivalente a age: age
         // ...
     };
 }</code></pre>
-                <p>Possiamo usare entrambe le proprietà, normale e abbreviata, nello stesso oggetto:</p>
-                <pre><code class="js">let user = {
+            <p>Possiamo usare entrambe le proprietà, normale e abbreviata, nello stesso oggetto:</p>
+            <pre><code class="js">let user = {
     name, // equivalente a name:name
     age: 30
 };</code></pre>
-                <h2 id="5">Limitazioni per i nomi di una proprietà</h2>
-                <p>Come già sappiamo, una variabile non può avere il nome uguale ad una parola chiave riservata
-                    al
-                    linguaggio come “for”, “let”, “return” etc.</p>
-                <p>Ma per le proprietà degli oggetti, non ci sono restrizioni:</p>
-                <pre><code class="js">// queste variabili sono tutte corrette
+            <h2 id="5">Limitazioni per i nomi di una proprietà</h2>
+            <p>Come già sappiamo, una variabile non può avere il nome uguale ad una parola chiave riservata
+                al
+                linguaggio come “for”, “let”, “return” etc.</p>
+            <p>Ma per le proprietà degli oggetti, non ci sono restrizioni:</p>
+            <pre><code class="js">// queste variabili sono tutte corrette
 let obj = {
     for: 1,
     let: 2,
@@ -242,75 +240,80 @@ let obj = {
 };
 					
 alert( obj.for + obj.let + obj.return ); // 6</code></pre>
-                <p>In breve, non ci sono limitazioni per i nomi delle proprietà. Possono essere stringhe o
-                    simboli
-                    (un tipo
-                    di dato speciale che andremo ad analizzare più avanti).</p>
-                <p>Nomi di proprietà con altri tipi “primitivi” vengono automaticamente convertiti a stringhe.
-                </p>
-                <p>Ad esempio, un numero <span class="em">0</span> diventa una stringa <span class="em">"0"</span> quando viene utilizzato come chiave
-                    di una
-                    proprietà:</p>
-                <pre><code class="js">let obj = {
+            <p>In breve, non ci sono limitazioni per i nomi delle proprietà. Possono essere stringhe o
+                simboli
+                (un tipo
+                di dato speciale che andremo ad analizzare più avanti).</p>
+            <p>Nomi di proprietà con altri tipi “primitivi” vengono automaticamente convertiti a stringhe.
+            </p>
+            <p>Ad esempio, un numero <span class="em">0</span> diventa una stringa <span class="em">"0"</span> quando
+                viene utilizzato come chiave
+                di una
+                proprietà:</p>
+            <pre><code class="js">let obj = {
     0: &quot;test&quot; // equivale a &quot;0&quot;: &quot;test&quot;
 };
 					
 // entrambi gli alert accedono alla stessa propriet&agrave; (il numero 0 viene convertito nella stringa &quot;0&quot;)
 alert( obj[&quot;0&quot;] ); // test
 alert( obj[0] ); // test (stessa propriet&agrave;)</code></pre>
-                <p>Esiste una piccola falla per la proprietà <span class="em">__proto__</span>. Non possiamo impostarla ad un valore
-                    diverso
-                    dal
-                    tipo oggetto:</p>
-                <pre><code>let obj = {};
+            <p>Esiste una piccola falla per la proprietà <span class="em">__proto__</span>. Non possiamo impostarla ad
+                un valore
+                diverso
+                dal
+                tipo oggetto:</p>
+            <pre><code>let obj = {};
 obj.__proto__ = 5; // assegnamo un numero
 alert(obj.__proto__); // [object Object] - il valore &egrave; un oggetto, non ha funzionato come ci si aspettava</code></pre>
-                <p>Come possiamo osservare nel codice sopra, l’assegnazione del numero intero 5 è stata
-                    ignorata.
-                </p>
-                <p>Studieremo più nel dettaglio <span class="em">__proto__</span> nel <a href="">capitolo</a>, e vedremo come sistemare
-                    questo
-                    comportamento.</p>
-                <h2 id="6">Controllo di esistenza, operatore “in”</h2>
-                <p>Un’importante caratteristica degli oggetti, in Javascript, è che è possibile accedere a una
-                    qualsiasi
-                    proprietà. Non ci sarà alcun errore se la proprietà non esiste!</p>
-                <p>L’accesso ad una variabile non esistente ritornerà <span class="em">undefined</span>. Possiamo quindi facilmente
-                    verificare se
-                    una properietà esiste:</p>
-                <pre><code class="js">let user = {};
+            <p>Come possiamo osservare nel codice sopra, l’assegnazione del numero intero 5 è stata
+                ignorata.
+            </p>
+            <p>Studieremo più nel dettaglio <span class="em">__proto__</span> nel <a href="">capitolo</a>, e vedremo
+                come sistemare
+                questo
+                comportamento.</p>
+            <h2 id="6">Controllo di esistenza, operatore “in”</h2>
+            <p>Un’importante caratteristica degli oggetti, in Javascript, è che è possibile accedere a una
+                qualsiasi
+                proprietà. Non ci sarà alcun errore se la proprietà non esiste!</p>
+            <p>L’accesso ad una variabile non esistente ritornerà <span class="em">undefined</span>. Possiamo quindi
+                facilmente
+                verificare se
+                una properietà esiste:</p>
+            <pre><code class="js">let user = {};
 
 alert( user.noSuchProperty === undefined ); // true significa &quot;nessuna properiet&agrave;&quot;</code></pre>
-                <p>Esiste anche uno speciale operatore <span class="em">"in"</span> per lo stesso scopo.</p>
-                <p>La sintassi è:</p>
-                <pre><code class="js">"key" in object</code></pre>
-                <p>Ad esempio:</p>
-                <pre><code class="js">let user = { name: &quot;John&quot;, age: 30 };
+            <p>Esiste anche uno speciale operatore <span class="em">"in"</span> per lo stesso scopo.</p>
+            <p>La sintassi è:</p>
+            <pre><code class="js">"key" in object</code></pre>
+            <p>Ad esempio:</p>
+            <pre><code class="js">let user = { name: &quot;John&quot;, age: 30 };
 
 alert( &quot;age&quot; in user ); // true, significa che user.age esiste
 alert( &quot;blabla&quot; in user ); // false, significa che user.blabla non esiste</code></pre>
-                <p>Da notare che alla sinistra di <span class="em">in</span> deve esserci il nome di una proprietà. Questa,
-                    solitamente,
-                    è
-                    una
-                    stringa.</p>
-                <p>Se omettiamo le virgolette attorno alla proprietà da cercare, verrà cercata una variabile con
-                    quel nome e
-                    verrà utilizzato il suo valore. Ad esempio:</p>
-                <pre><code class="js">let user = { age: 30 };
+            <p>Da notare che alla sinistra di <span class="em">in</span> deve esserci il nome di una proprietà. Questa,
+                solitamente,
+                è
+                una
+                stringa.</p>
+            <p>Se omettiamo le virgolette attorno alla proprietà da cercare, verrà cercata una variabile con
+                quel nome e
+                verrà utilizzato il suo valore. Ad esempio:</p>
+            <pre><code class="js">let user = { age: 30 };
 
 let key = &quot;age&quot;;
 alert( key in user ); // true, prende il nome da key e controlla l'esistenza della propriet&agrave;</code></pre>
-                <h2 id="7">Il ciclo “for…in”</h2>
-                <p>Per attraversare tutte le chiavi di un oggetto, esiste una speciale forma di ciclo: <span class="em">for..in</span>.
-                    Questo è
-                    completamente diverso da <span class="em">for(;;)</span>.</p>
-                <p>La sintassi:</p>
-                <pre><code>for (key in object) {
+            <h2 id="7">Il ciclo “for…in”</h2>
+            <p>Per attraversare tutte le chiavi di un oggetto, esiste una speciale forma di ciclo: <span
+                    class="em">for..in</span>.
+                Questo è
+                completamente diverso da <span class="em">for(;;)</span>.</p>
+            <p>La sintassi:</p>
+            <pre><code>for (key in object) {
 // esegue il corpo del ciclo per ogni propriet&agrave; dell'oggetto
 }</code></pre>
-                <p>Ad esempio, proviamo a mostrare tutte le proprietà di <span class="em">user</span>:</p>
-                <pre><code class="js">let user = {
+            <p>Ad esempio, proviamo a mostrare tutte le proprietà di <span class="em">user</span>:</p>
+            <pre><code class="js">let user = {
     name: &quot;John&quot;,
     age: 30,
     isAdmin: true
@@ -322,85 +325,88 @@ for (let key in user) {
     // valori delle keys
     alert( user[key] ); // John, 30, true
 }</code></pre>
-                <p>Da notare che tutti i costrutti “for” ci consentono di dichiarare delle variabili da
-                    utilizzare
-                    all’interno del ciclo stesso, come <span class="em">let key</span> in questo esempio.</p>
-                <p>Inoltre possiamo utilizzare qualsiasi altra variabile al posto di <span class="em">key</span>. Ad esempio
-                    <span class="em">"for(let
-                        prop
-                        in obj)"</span>
-                    è molto utilizzato.
-                </p>
-                <h2 id="8">Riepilogo</h2>
-                <p>Gli oggetti sono arrays associativi con diverse caratteristiche speciali:</p>
-                <p>Possono memorizzare proprietà (coppie di chiave-valore) in cui:</p>
-                
-                <ul>
-                    <li>Il nome della proprietà (chiave) deve essere composta da una o più stringhe o simboli
-                        (solitamente stringhe).</li>
-                    <li>I valori possono essere di qualsiasi tipo.</li>
-                </ul>
-                
-                <p>Per accedere ad una proprietà possiamo utilizzare:</p>
-                
-                <ul>
-                    <li>La notazione puntata: <span class="em">obj.property</span>.</li>
-                    <li>La notazione con parentesi quadre <span class="em">obj["property"]</span>. Questa notazione consente di
-                        accettare
-                        chiavi
-                        dalle variabili, come <span class="em">obj[varWithKey]</span>.</li>
-                </ul>
-                
-                <p>Operatori specifici:</p>
-                
-                <ul>
-                    <li>Per cancellare una proprietà: <span class="em">delete obj.prop</span>.</li>
-                    <li>Per controllare se un una proprietà con un certo nome esiste: <span class="em">"key" in obj</span>.</li>
-                    <li>Per iterare un oggetto: <span class="em">for(let key in obj)</span>.</li>
-                </ul>
-                
-                <p>Gli oggetti vengono assegnati e copiati per riferimento. In altre parole, la variabile non
-                    memorizza il
-                    “valore dell’oggetto”, ma piuttosto un “riferimento” (indirizzo di memoria). Quindi copiando
-                    questa variabile o passandola come argomento ad una funzione, fornirà un riferimento
-                    all’oggetto
-                    e non una copia. Tutte le operazioni effettuate su un oggetto copiato per riferimento (come
-                    aggiungere/rimuovere proprietà) vengono effettuate sullo stesso oggetto.</p>
-                <p>Quello che abbiamo studiato in questo capitolo viene chiamato “oggetto semplice”, o solo
-                    <span class="em">Object</span>.
-                </p>
-                <p>Ci sono altri tipi di oggetti in Javascript:</p>
-                
-                <ul>
-                    <li><span class="em">Array</span> per memorizzare dati ordinati,</li>
-                    <li><span class="em">Date</span> per memorizzare informazioni riguardo date e orari,</li>
-                    <li><span class="em">Error</span> per memorizzare informazioni riguardo errori.</li>
-                    <li>…e molti altri.</li>
-                </ul>
-                
-                <p>Ognuno di questi ha le sue caratteristiche speciali che studieremo più avanti. Qualche volta
-                    le
-                    persone dicono cose tipo “Array type” (“tipo Array”) o “Date type” (“tipo Data”), ma
-                    formalmente
-                    non
-                    sono dei tipi, appartengono al tipo di dato “object”. Sono semplicemente delle estensioni.
-                </p>
-                <p>Gli oggetti in JavaScript sono molto potenti. Qui abbiamo grattato solamente la superficie,
-                    l’argomento è veramente ampio. Lavoreremo molto con gli oggetti per impararne ulteriori
-                    caratteristiche.</p>
-            </div>
+            <p>Da notare che tutti i costrutti “for” ci consentono di dichiarare delle variabili da
+                utilizzare
+                all’interno del ciclo stesso, come <span class="em">let key</span> in questo esempio.</p>
+            <p>Inoltre possiamo utilizzare qualsiasi altra variabile al posto di <span class="em">key</span>. Ad esempio
+                <span class="em">"for(let
+                    prop
+                    in obj)"</span>
+                è molto utilizzato.
+            </p>
+            <h2 id="8">Riepilogo</h2>
+            <p>Gli oggetti sono arrays associativi con diverse caratteristiche speciali:</p>
+            <p>Possono memorizzare proprietà (coppie di chiave-valore) in cui:</p>
 
-            <!--Bottoni visibili in modalità mobile-->
-            <div id="nav-btns-mobile">
-                <button id="prev-btn-mobile" class="nav-btn-mobile" onclick="prevLesson()">
-                    <i class='bx bx-chevron-left'></i>
-                    <span>Lezione precedente</span>
-                </button>
-                <button id="next-btn-mobile" class="nav-btn-mobile" onclick="nextLesson()">
-                    <span>Lezione successiva</span>
-                    <i class='bx bx-chevron-right'></i>
-                </button>
-            </div>
+            <ul>
+                <li>Il nome della proprietà (chiave) deve essere composta da una o più stringhe o simboli
+                    (solitamente stringhe).</li>
+                <li>I valori possono essere di qualsiasi tipo.</li>
+            </ul>
+
+            <p>Per accedere ad una proprietà possiamo utilizzare:</p>
+
+            <ul>
+                <li>La notazione puntata: <span class="em">obj.property</span>.</li>
+                <li>La notazione con parentesi quadre <span class="em">obj["property"]</span>. Questa notazione consente
+                    di
+                    accettare
+                    chiavi
+                    dalle variabili, come <span class="em">obj[varWithKey]</span>.</li>
+            </ul>
+
+            <p>Operatori specifici:</p>
+
+            <ul>
+                <li>Per cancellare una proprietà: <span class="em">delete obj.prop</span>.</li>
+                <li>Per controllare se un una proprietà con un certo nome esiste: <span class="em">"key" in obj</span>.
+                </li>
+                <li>Per iterare un oggetto: <span class="em">for(let key in obj)</span>.</li>
+            </ul>
+
+            <p>Gli oggetti vengono assegnati e copiati per riferimento. In altre parole, la variabile non
+                memorizza il
+                “valore dell’oggetto”, ma piuttosto un “riferimento” (indirizzo di memoria). Quindi copiando
+                questa variabile o passandola come argomento ad una funzione, fornirà un riferimento
+                all’oggetto
+                e non una copia. Tutte le operazioni effettuate su un oggetto copiato per riferimento (come
+                aggiungere/rimuovere proprietà) vengono effettuate sullo stesso oggetto.</p>
+            <p>Quello che abbiamo studiato in questo capitolo viene chiamato “oggetto semplice”, o solo
+                <span class="em">Object</span>.
+            </p>
+            <p>Ci sono altri tipi di oggetti in Javascript:</p>
+
+            <ul>
+                <li><span class="em">Array</span> per memorizzare dati ordinati,</li>
+                <li><span class="em">Date</span> per memorizzare informazioni riguardo date e orari,</li>
+                <li><span class="em">Error</span> per memorizzare informazioni riguardo errori.</li>
+                <li>…e molti altri.</li>
+            </ul>
+
+            <p>Ognuno di questi ha le sue caratteristiche speciali che studieremo più avanti. Qualche volta
+                le
+                persone dicono cose tipo “Array type” (“tipo Array”) o “Date type” (“tipo Data”), ma
+                formalmente
+                non
+                sono dei tipi, appartengono al tipo di dato “object”. Sono semplicemente delle estensioni.
+            </p>
+            <p>Gli oggetti in JavaScript sono molto potenti. Qui abbiamo grattato solamente la superficie,
+                l’argomento è veramente ampio. Lavoreremo molto con gli oggetti per impararne ulteriori
+                caratteristiche.</p>
+        </div>
+
+        <!--Bottoni per andare alla lezione successiva/precedente-->
+        <div id="nav-btns">
+            <button id="prev-btn" class="nav-btn" onclick="prevLesson()">
+                <i class='bx bx-chevron-left'></i>
+                <span>Lezione precedente</span>
+            </button>
+            <button id="next-btn" class="nav-btn" onclick="nextLesson()">
+                <span>Lezione successiva</span>
+                <i class='bx bx-chevron-right'></i>
+            </button>
+        </div>
+
     </main>
 
     <!--Footer-->

@@ -73,7 +73,7 @@ body {
     display: flex;
     align-items: center;
     margin-right: 30px;
-    
+
 }
 
 .search-bar {
@@ -101,7 +101,7 @@ body {
 
 #menu-content {
     display: flex;
-    justify-content:right;
+    justify-content: right;
     position: absolute;
     background-color: #f1f1f1;
     box-shadow: 0 12px 20px -10px gray;
@@ -169,60 +169,13 @@ body {
 /* ========
     BOTTONI
     ======== */
-.btn {
+#side-btn {
     position: fixed;
     font-size: 30px;
     cursor: pointer;
     color: var(--blue-2);
     background-color: transparent;
     border: none;
-}
-
-.btn:hover {
-    background-color: var(--grey-7);
-}
-
-.nav-btn {
-    font-size: 50px;
-    border-radius: 10%;
-    top: 50%;
-}
-
-.nav-btn .tooltip {
-    font-size: 12px;
-    visibility: hidden;
-    width: 120px;
-    background-color: var(--grey-7);
-    color: var(--black);
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    top: 65px;
-}
-
-.nav-btn:hover .tooltip {
-    visibility: visible;
-}
-
-#next-btn {
-    right: 20px;
-}
-
-#next-btn .tooltip {
-    right: 0px;
-}
-
-#prev-btn {
-    left: 270px;
-    transition: left .2s;
-}
-
-#prev-btn .tooltip {
-    left: 0px;
-}
-
-#side-btn {
     border-radius: 50%;
     padding: 8px 9px 4px 9px;
     left: 270px;
@@ -230,43 +183,56 @@ body {
     transition: top .1s, left .2s;
 }
 
-#nav-btns-mobile {
-    display: none;
+#side-btn:hover {
+    background-color: var(--grey-7);
+}
+
+#nav-btns {
+    display: flex;
     justify-content: space-between;
 }
 
-.nav-btn-mobile {
+.nav-btn {
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 30%;
     margin-top: 30px;
     padding: 5px;
     cursor: pointer;
-    background-color: var(--bg-color);
+    background-color: transparent;
     border: 3px solid var(--grey-7);
 }
 
-.nav-btn-mobile i {
+.nav-btn:hover {
+    background-color: var(--grey-7);
+}
+
+.nav-btn i {
     font-size: 40px;
-    color: var(--grey-4)
+    color: var(--grey-4);
 }
 
-.nav-btn-mobile span {
-    font-size: 12px;
+.nav-btn:hover i {
+    color: var(--blue-2);
 }
 
-#prev-btn-mobile {
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
-    border-right: 1px;
-    justify-content: left;
+.nav-btn span {
+    font-size: 14px;
 }
 
-#next-btn-mobile {
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
-    justify-content: right;
+#prev-btn,
+#next-btn {
+    justify-content: space-between
 }
+
+#prev-btn span {
+    margin-right: 10%;
+}
+
+#next-btn span {
+    margin-left: 10%;
+}
+
 
 /* ===================
     CONTENUTO PRINCIPALE
@@ -477,14 +443,6 @@ body {
 
 @media screen and (max-width: 853px) {
 
-   /*  #logo {
-        display: none
-    }
-
-    #topbar-logo {
-        margin-right: 20px
-    } */
-
     #search-bar {
         display: none
     }
@@ -506,8 +464,16 @@ body {
         display: none
     }
 
-    .btn {
+    #side-btn {
         display: none
+    }
+
+    .nav-btn {
+        width: 50%;
+    }
+
+    .nav-btn span {
+        font-size: 12px;
     }
 
     #lesson-page {
@@ -516,12 +482,16 @@ body {
     }
 
     #nav-btns-mobile {
-        display:flex;
+        display: flex;
     }
 
-    .main a:hover {
+   /*  .main a:hover {
         text-decoration: none;
         color: var(--blue-3);
+    } */
+
+    html.touch *:hover {
+        all:unset!important;
     }
 
     #footer {
