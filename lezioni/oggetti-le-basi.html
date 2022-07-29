@@ -68,16 +68,8 @@
     </div>
 
     <!--Bottoni-->
-    <button id="side-btn" class="btn" onclick="toggleSidebar()">
+    <button id="side-btn" onclick="toggleSidebar()">
         <i class='bx bx-menu'></i>
-    </button>
-    <button id="prev-btn" class="nav-btn btn" onclick="prevLesson()">
-        <i class='bx bx-chevron-left'></i>
-        <span class="tooltip">Lezione precedente</span>
-    </button>
-    <button id="next-btn" class="nav-btn btn" onclick="nextLesson()">
-        <i class='bx bx-chevron-right'></i>
-        <span class="tooltip">Lezione successiva</span>
     </button>
 
     <!--Main Content-->
@@ -109,13 +101,13 @@
             </div>
         </div>
 
-        <!--Bottoni visibili in modalità mobile-->
-        <div id="nav-btns-mobile">
-            <button id="prev-btn-mobile" class="nav-btn-mobile" onclick="prevLesson()">
+        <!--Bottoni per andare alla lezione successiva/precedente-->
+        <div id="nav-btns">
+            <button id="prev-btn" class="nav-btn" onclick="prevLesson()">
                 <i class='bx bx-chevron-left'></i>
                 <span>Lezione precedente</span>
             </button>
-            <button id="next-btn-mobile" class="nav-btn-mobile" onclick="nextLesson()">
+            <button id="next-btn" class="nav-btn" onclick="nextLesson()">
                 <span>Lezione successiva</span>
                 <i class='bx bx-chevron-right'></i>
             </button>

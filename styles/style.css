@@ -443,6 +443,14 @@ body {
 
 @media screen and (max-width: 853px) {
 
+    #topbar-logo {
+        margin-right: 20px;
+    }
+
+    #logo {
+        display: none;
+    }
+
     #search-bar {
         display: none
     }
@@ -455,9 +463,12 @@ body {
         display: block;
     }
 
+    #topbar-title-container {
+        width: 146px;
+    }
+
     #topbar-title {
-        /* font-size: 20px; */
-        display: none;
+        font-size: 18px;
     }
 
     #sidebar-container {
@@ -485,17 +496,25 @@ body {
         display: flex;
     }
 
-   /*  .main a:hover {
+    .main a:hover {
         text-decoration: none;
         color: var(--blue-3);
-    } */
+    }
 
-    html.touch *:hover {
-        all:unset!important;
+    .nav-btn:hover {
+        background-color: transparent;
+    }
+
+    .nav-btn:hover i {
+        color: var(--grey-4)
     }
 
     #footer {
         width: 100%
+    }
+
+    #footer-links a:hover {
+        color: white;
     }
 
 }

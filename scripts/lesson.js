@@ -4,7 +4,6 @@
 const sidebar = document.getElementById("sidebar")
 const sideRect = document.getElementById("sidebar-rect")
 const sideBtn = document.getElementById("side-btn")
-const prevBtn = document.getElementById("prev-btn")
 const lessonPage = document.getElementById("lesson-page")
 const footer = document.getElementById("footer")
 
@@ -80,7 +79,6 @@ function openSidebar() {
     sidebar.style.width = "250px"
     sideRect.style.width = "250px"
     sideBtn.style.left = "270px"
-    prevBtn.style.left = "270px"
     footer.style.width = "calc(100% - 250px)"
 }
 
@@ -89,7 +87,6 @@ function closeSidebar() {
     sidebar.style.width = "0px"
     sideRect.style.width = "0px"
     sideBtn.style.left = "20px"
-    prevBtn.style.left = "20px"
     footer.style.width = "100%"
 }
 
